@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ececec;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-family: "Montserrat", sans-serif;
+  color: rgba(0, 0, 0, 0.9) !important;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 95%;
+  margin: auto;
+}
+
+.btn-org {
+  background-color: #ff5252 !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  padding: 7px 20px !important;
+}
+
+.btn-org:hover {
+  background: #171717 !important;
+}
+
+header .top-strip {
+  border-top: 5px solid rgb(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgb(0, 0, 0, 0.1);
+}
+
+.link:hover {
+  color: #ff5252;
+}
+
+.MuiBadge-badge {
+  background-color: rgb(238, 43, 43) !important;
+}
+
+.nav ul button {
+  text-transform: capitalize !important;
+}
+
+.nav ul button:hover {
+  background: none !important;
+}
+
+.sliderHome {
+  overflow: inherit !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  --swiper-navigation-color: #000;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #fff;
+  border-radius: 100%;
+  width: 45px !important;
+  height: 45px !important;
+  min-width: 45px;
+  box-shadow: 0 1px 3px #c58080, 0 1px 2px #de5555 !important;
+    transform: scale(1);
+  opacity: 0.7;
+  transition: all 0.4s ease;
+
+}
+
+.swiper-button-prev svg,
+.swiper-button-next svg {
+  width: 21px !important;
+  height: 21px !important;
+  fill: #000 !important;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+   background-color: rgb(219, 139, 139);
+  color: rgb(0, 0, 0);
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.smBtn
+.swiper-button-prev,
+.smBtn
+.swiper-button-next {
+  width: 30px !important;
+  height: 30px !important;
+  min-width: 30px !important;
+  /* top: 125px !important; */
+   box-shadow: 0 1px 3px #c58080, 0 1px 2px #de5555 !important;
+    transform: scale(1);
+  opacity: 0.7;
+  transition: all 0.4s ease;
+}
+
+.smBtn
+.swiper-button-prev svg,
+.smBtn
+.swiper-button-next svg {
+   width: 15px !important;
+  height: 15px !important;
+  fill: #000 !important;
+}
+
+.smBtn
+.swiper-button-prev:hover,
+.smBtn
+.swiper-button-next:hover {
+   background-color: rgba(223, 216, 216, 0.687);
+  color: rgb(0, 0, 0);
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.homeCatSlider .item:hover img {
+  transform: scale(1.1);
+}
+
+.MuiTabs-indicator {
+  background-color: #ff5252 !important;
+}
+
+footer from input::placeholder {
+  font-size: 14px !important;
+}
+
+.css-1ml7hhy-MuiButtonBase-root-MuiSwitchBase-root-MuiCheckbox-root.Mui-checked, .css-1ml7hhy-MuiButtonBase-root-MuiSwitchBase-root-MuiCheckbox-root.MuiCheckbox-indeterminate {
+  color:#ff5252 !important;
+}
+
+.MuiFormControlLabel-label {
+  padding-top: 5px !important;
+  font-size: 14px !important;
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ff5252 !important;
+}
+
+/* Initial state */
+.homeSliderV2 .info h4,
+.homeSliderV2 .info h2,
+.homeSliderV2 .info h3,
+.homeSliderV2 .info .btb {
+    opacity: 0;
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.homeSliderV2 .swiper-slide-active .subtitle {
+    animation: slideLeft 0.6s ease forwards;
+}
+
+.homeSliderV2 .swiper-slide-active .title {
+    animation: slideLeft 0.8s ease forwards;
+}
+
+.homeSliderV2 .swiper-slide-active .price {
+    animation: slideLeft 1s ease forwards;
+}
+
+.homeSliderV2 .swiper-slide-active .btb {
+    animation: slideLeft 1.2s ease forwards;
+}
+
+.MuiCheckbox-root {
+  padding: 6px !important;
+}
+
+.ReactCollapse--collapse {
+  transition: height 400ms;
+}
+
+.itemViewActions button.active svg {
+  color: #ff5252 !important;
+}
+
+.css-1i9empq-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  background-color: #ff5252 !important;
+}
