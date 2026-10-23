@@ -14,7 +14,7 @@ const Homeslider = () => {
                     spaceBetween={50}
                     slidesPerView={1}
                     autoplay={{
-                        delay: 2500,
+                        delay: 6500,
                         disableOnInteraction: false,
                     }}
                     navigation
