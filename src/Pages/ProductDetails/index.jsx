@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import ProductZoom from '../../component/ProductZoom';
 import Rating from '@mui/material/Rating';
 import Button from '@mui/material/Button';
+import QuantityBox from '../../component/QuanitiyBox';
+import { MdShoppingCart } from "react-icons/md";
 
 const ProductDetails = () => {
 
@@ -73,6 +75,15 @@ const ProductDetails = () => {
                             <Button className={`${productActionIndex === 2 ? '!bg-[#ff5252] !text-white' : ''}`} onClick={() => setProductActionIndex(2)}>L</Button>
                             <Button className={`${productActionIndex === 3 ? '!bg-[#ff5252] !text-white' : ''}`} onClick={() => setProductActionIndex(3)}>XL</Button>
                             </div>
+                        </div>
+
+                        <p className='text-[14px] !mt-4 !mb-2'>Free Shipping (Est. Delivery Time 2-3 Days)</p>
+
+                        <div className='flex items-center !gap-4'>
+                            <div className='qtyBoxWrapper w-[70px]'>
+                                <QuantityBox/>
+                            </div>
+                            <Button className='btn-org flex !gap-2'><MdShoppingCart className='text-[18px]'/> Add to Cart</Button>
                         </div>
                         
                 </div>
