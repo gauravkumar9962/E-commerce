@@ -34,7 +34,7 @@ const ProductItems = () => {
             </div>
 
             <div className="info !p-3 !py-5 !px-8 w-[75%]">
-                <h6 className="text-[11px]">
+                <h6 className="text-[11px] !font-[400]">
                     <Link to="/" className="link transition-all !pl-2">boAt</Link></h6>
                 <h3 className="text-[18px] title !mt-2 !mb-3 font-[500] !mb-2 text-[#000] !pl-1">
                     <Link to="/" className="link transition-all">boAt EnergyShroom 20000 mAh Power Bank, 2 way 22.5 watt Fast Charging, Quick Charge 3.0, High Temperature and Scratch Resistant,12-Layer Smart IC Protection.</Link>

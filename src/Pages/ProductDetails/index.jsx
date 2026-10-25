@@ -7,10 +7,13 @@ import Rating from '@mui/material/Rating';
 import Button from '@mui/material/Button';
 import QuantityBox from '../../component/QuanitiyBox';
 import { MdShoppingCart } from "react-icons/md";
+import { FaRegHeart } from "react-icons/fa6";
+import { IoGitCompareOutline } from "react-icons/io5";
 
 const ProductDetails = () => {
 
     const [productActionIndex , setProductActionIndex] = useState(null);
+    const [activeTab, setActiveTab] = useState(0);
     return (
         <>
         <div className="!py-5">
@@ -32,12 +35,12 @@ const ProductDetails = () => {
         </div>
 
         <section className='bg-white !py-5'>
-            <div className="container flex !gap-50">
+            <div className="container flex items-center !gap-50">
                 <div className="productZoomContainer w-[30%]">
                     <ProductZoom />
                 </div>
 
-                <div className='productContent w-[70%]'>
+                <div className='productContent w-[70%] !pr-10'>
                     <h1 className='text-[35px] font-[650] !mb-2'>Chikaikari woven kurta</h1>
                     <div className='flex items-center !gap-3'>
                         <span className='text-gray-500 text-[18px]'> Brands  : 
@@ -79,15 +82,277 @@ const ProductDetails = () => {
 
                         <p className='text-[14px] !mt-4 !mb-2'>Free Shipping (Est. Delivery Time 2-3 Days)</p>
 
-                        <div className='flex items-center !gap-4'>
+                        <div className='flex items-center !gap-4 !pt-3'>
                             <div className='qtyBoxWrapper w-[70px]'>
                                 <QuantityBox/>
                             </div>
                             <Button className='btn-org flex !gap-2'><MdShoppingCart className='text-[18px]'/> Add to Cart</Button>
                         </div>
+
+                        <div className="flex items-center !gap-5 !mt-4 !pt-3">
+                            <span className='flex items-center !gap-2 text-[15px] font-[500] link cursor-pointer'><FaRegHeart className='text-[18px] '/>
+                            Add To Wishlist</span>
+
+                             <span className='flex items-center !gap-2 text-[15px] font-[500] link cursor-pointer'><IoGitCompareOutline className='text-[18px]'/>
+                            Add To compare</span>
+                        </div>
                         
                 </div>
             </div>
+
+            <div className='container !pt-10'>
+            <div className='flex items-center !gap-8 !mb-5'>
+                <span className={`link text-[18px] cursor-pointer font-[500] ${activeTab===0 && 'text-[#ff5252]'}`} onClick={()=>setActiveTab(0)}>Description</span>
+
+                <span className={`link text-[18px] cursor-pointer font-[500] ${activeTab===1 && 'text-[#ff5252]'}`} onClick={()=>setActiveTab(1)}>Product Details</span>
+
+                <span className={`link text-[18px] cursor-pointer font-[500] ${activeTab===2 && 'text-[#ff5252]'}`} onClick={()=>setActiveTab(2)}>Review (5)</span>
+            </div>
+
+            {
+                activeTab===0 && (
+                    <div className='shadow-md w-full !py-5 !px-8 rounded-md'>
+                <h4>Powerful Processor</h4>
+                
+                <p>Segment's fastest phone with 1.03Mn+ AnTuTu score: MediaTek Dimensity 7400 Apex Processor with enhanced performance, an advanced power-efficient chip, delivering smoother multitasking, faster app launches, and a lag-free everyday experience.</p>
+
+                <h4>7000mAh Battery</h4>
+
+                <p>Massive 7000mAh Battery: More Power, Less Charging. Power that lasts up to 2 days with a massive 7000mAh battery, backed by 45W SUPERVOOC fast charging for quick top-ups. Enjoy up to 81.7 hours of music playback, 26.2 hours of YouTube streaming, and 11.7 hours of video calls on a full charge. Even a quick 10-minute charge gives you up to 7.5 hours of calls, 2.2 hours of YouTube, and 1.4 hours of gaming.</p>
+
+                <h4>Upto 144FPS</h4>
+
+                <p>Segment's highest FPS for gaming: Experience the segment’s highest FPS for gaming with up to 144 FPS support for ultra-smooth, responsive gameplay and up to 90 FPS for top-rated shooters. Stay ahead with faster reactions and seamless performance. Plus, a category-leading 5,300 mm² VC cooling system and 5G++ network to keep your intense gaming cool and smooth, ensuring stable performance so you can play longer and win more.</p>
+
+                <h4>Highest 144Hz refresh rate</h4>
+
+                <p>Segment's highest 144Hz refresh rate display: Enjoy a super-smooth 144Hz display that delivers fast, fluid visuals in every swipe. Experience clear viewing even in bright sunlight with up to 1000 nits peak brightness for an immersive experience. With Aqua Touch for precise control, even with wet or oil fingers, everything feels fast, clear, and effortless.</p>
+
+                <h4>4K video recording</h4>
+
+                <p>4K video recording. Triple Camera. Made for Every Moment: 50MP main camera, 8MP front camera, and 2MP depth-assist camera, built to capture every moment with clarity. Capture every moment in 4K at 30 FPS with sharper detail and smoother motion. Bring memories to life with 4K Motion Photos, rich, vivid, and ready to replay.</p>
+
+                <h4>Fast and smooth for 5 years</h4>
+
+                <p>Smoothness for 5 Years, Built for You: Real-world toughness meets military-grade durability, built to stay fast and smooth for 5 years.</p>
+                    </div>
+                )}
+
+                {
+                    activeTab===1 && (
+                        <div className='shadow-md w-full !py-5 !px-8 rounded-md'>
+                        <div class="relative overflow-x-auto  shadow-xs rounded-base border border-default">
+                        <table class="table-fixed w-full text-sm text-left rtl:text-right text-body">
+                            <thead class="text-sm text-body bg-neutral-secondary-soft border-b rounded-base border-default">
+                                <tr>
+                                    <th scope="col" class="!px-6 !py-4 font-medium">
+                                        Additional details
+                                    </th>
+                                    <th scope="col" class="!px-6 !py-4 font-medium">
+                                        
+                                    </th>
+                                    <th scope="col" class="!px-6 !py-4 font-medium">
+                                        Display
+                                    </th>
+                                     <th scope="col" class="!px-6 !py-4 font-medium">
+                                        
+                                    </th>
+                                     <th scope="col" class="!px-6 !py-4 font-medium">
+                                        Item details
+                                    </th>
+                                     <th scope="col" class="!px-6 !py-4 font-medium">
+                                        
+                                    </th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-neutral-primary border-b border-default">
+                                    <th scope="row" class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Operating System
+                                    </th>
+                                    <td class="!px-6 !py-4">
+                                        OxygenOS 16
+                                    </td>
+                                    <td class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Screen Size Unit of Measure
+                                    </td>
+                                    <td class="!px-6 !py-4">
+                                        	6.72 Inches
+                                    </td>
+                                    <td class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Brand Name
+                                    </td>
+                                    <td class="!px-6 !py-4">
+                                        OnePlus
+                                    </td>
+                                   
+                                </tr>
+                                <tr class="bg-neutral-primary border-b border-default">
+                                    <th scope="row" class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        RAM Memory Installed
+                                    </th>
+                                    <td class="!px-6 !py-4">
+                                        8 GB
+                                    </td>
+                                    <td class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Resolution
+                                    </td>
+                                    <td class="!px-6 !py-4">
+                                        2400 x 1080
+                                    </td>
+                                    <td class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Box Contents
+                                    </td>
+                                    <td class="!px-6 !py-4">
+                                         Phone Case, Power Adapter, Quick Start Guide, SIM Tray Ejector, USB Cable
+                                    </td>
+                                   
+                                </tr>
+                                <tr class="bg-neutral-primary border-b border-default">
+                                    <th scope="row" class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Processor Series
+                                    </th>
+                                    <td class="!px-6 !py-4">
+                                        Mediatek Dimensity 7400
+                                    </td>
+                                    <td class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Refresh Rate
+                                    </td>
+                                    <td class="!px-6 !py-4">
+                                       144HZ
+                                    </td>
+                                    <td class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Manufacturer
+                                    </td>
+                                    <td class="!px-6 !py-4">
+                                       DBG TECHNOLOGY (INDIA) PRIVATE LIMITED Address:PLOT NO 10, SECTOR-5, HSIIDC INDUSTRIAL MODEL TOWNSHIP, BAWAL,REWARI, HARYANA -123501, OnePlus
+                                    </td>
+                                </tr>
+                                
+                                <tr class="bg-neutral-primary border-b border-default">
+                                    <th scope="row" class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Memory Storage Capacity
+                                    </th>
+                                    <td class="!px-6 !py-4">
+                                        128 GB
+                                    </td>
+                                    <td class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Maximum Display Resolution
+                                    </td>
+                                    <td class="!px-6 !py-4">
+                                        2400 x 1080 Pixels
+                                    </td>
+                                    <td class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Item Type Name
+                                    </td>
+                                    <td class="!px-6 !py-4">
+                                         SmartPhone
+                                    </td>
+                                   
+                                </tr>
+
+                                <tr class="bg-neutral-primary border-b border-default">
+                                    <th scope="row" class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Connector Type
+                                    </th>
+                                    <td class="!px-6 !py-4">
+                                        USB Type c
+                                    </td>
+                                    <td class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Display Pixel Density
+                                    </td>
+                                    <td class="!px-6 !py-4">
+                                        392 Pixels Per Inch (PPI)
+                                    </td>
+                                    <td class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Best Sellers Rank
+                                    </td>
+                                    <td class="!px-6 !py-4">
+                                        #46 in Electronics (See Top 100 in Electronics)
+                                    </td>
+                                   
+                                </tr>
+
+                                <tr class="bg-neutral-primary border-b border-default">
+                                    <th scope="row" class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Biometric Security Feature
+                                    </th>
+                                    <td class="!px-6 !py-4">
+                                        Fingerprint Recognition
+                                    </td>
+                                    <td class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Display Type
+                                    </td>
+                                    <td class="!px-6 !py-4">
+                                        LCD
+                                    </td>
+                                    <td class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        ASIN
+                                    </td>
+                                    <td class="!px-6 !py-4">
+                                        B0GVYXPZBS
+                                    </td>
+                                   
+                                </tr>
+
+                                <tr class="bg-neutral-primary">
+                                    <th scope="row" class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Human Interface Types
+                                    </th>
+                                    <td class="!px-6 !py-4">
+                                        Touchscreen
+                                    </td>
+                                    <td class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Frame Rate
+                                    </td>
+                                    <td class="!px-6 !py-4">
+                                        30 Frames per Second
+                                    </td>
+                                    <td class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
+                                        Customer Reviews
+                                    </td>
+                                    <td class="!px-6 !py-4">
+                                        4.4 out of 5 stars
+                                    </td>
+                                   
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    </div>
+                    )
+                }
+
+                {
+                    activeTab===2 && (
+                        <div className='shadow-md w-full !py-5 !px-8 rounded-md'>
+                        <div className='w-full productReviewContainer'>
+                            <h2 className='text-[20px]'>Customers Review</h2>
+
+                            <div className='scroll w-full max-h-[300px] overflow-y-scroll overflow-x-hidden !mt-4'>
+                                <div className='review w-full flex items-center justify-between'>
+                                    <div className='info w-[60px] flex items-center !gap-2'>
+                                        <div className='img w-[80px] h-[80px] overflow-hidden rounded-full'>
+                                            <img src="https://i.pinimg.com/236x/b4/1f/f4/b41ff478e42e31fd71584d9dae338ffa.jpg" className='w-full' />
+                                        </div>
+
+                                        {/* <div className='w-[70%]'>
+                                            <h4 className='text-[16px]'>Gaurav Kumar</h4>
+                                            <h5 className='text-[13px] !mb-0'>2026-12-10</h5>
+                                            <p className='!mt-0 !mb-0'>Very Nice</p>
+                                        </div> */}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    )
+                }
+
+            </div>
+
         </section>
         </>
     );

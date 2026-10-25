@@ -30,6 +30,9 @@ const QuantityBox = () => {
                 <FaAngleDown className="text-[12px]"/>
             </Button>
         </div>
+
+        
+
         </div>
     );
 };
