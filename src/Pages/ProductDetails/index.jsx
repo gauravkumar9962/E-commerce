@@ -9,6 +9,8 @@ import QuantityBox from '../../component/QuanitiyBox';
 import { MdShoppingCart } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa6";
 import { IoGitCompareOutline } from "react-icons/io5";
+import TextField from '@mui/material/TextField';
+import ProductsSlider from "../../component/ProductsSlider";
 
 const ProductDetails = () => {
 
@@ -274,7 +276,7 @@ const ProductDetails = () => {
                                    
                                 </tr>
 
-                                <tr class="bg-neutral-primary border-b border-default">
+                                <tr class="bg-neutral-primary">
                                     <th scope="row" class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
                                         Biometric Security Feature
                                     </th>
@@ -296,28 +298,6 @@ const ProductDetails = () => {
                                    
                                 </tr>
 
-                                <tr class="bg-neutral-primary">
-                                    <th scope="row" class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
-                                        Human Interface Types
-                                    </th>
-                                    <td class="!px-6 !py-4">
-                                        Touchscreen
-                                    </td>
-                                    <td class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
-                                        Frame Rate
-                                    </td>
-                                    <td class="!px-6 !py-4">
-                                        30 Frames per Second
-                                    </td>
-                                    <td class="!px-6 !py-4 font-medium text-heading whitespace-nowrap">
-                                        Customer Reviews
-                                    </td>
-                                    <td class="!px-6 !py-4">
-                                        4.4 out of 5 stars
-                                    </td>
-                                   
-                                </tr>
-
                             </tbody>
                         </table>
                     </div>
@@ -331,27 +311,142 @@ const ProductDetails = () => {
                         <div className='w-full productReviewContainer'>
                             <h2 className='text-[20px]'>Customers Review</h2>
 
-                            <div className='scroll w-full max-h-[300px] overflow-y-scroll overflow-x-hidden !mt-4'>
-                                <div className='review w-full flex items-center justify-between'>
-                                    <div className='info w-[60px] flex items-center !gap-2'>
+                            <div className='reviewScroll w-full max-h-[300px] overflow-y-scroll overflow-x-hidden !mt-5 !pr-5'>
+                                <div className='review !pt-5 !pb-5 border-b border-[rgba(0,0,0,0.5)] w-full flex items-center justify-between'>
+                                    <div className='info w-full flex items-center !gap-3'>
                                         <div className='img w-[80px] h-[80px] overflow-hidden rounded-full'>
-                                            <img src="https://i.pinimg.com/236x/b4/1f/f4/b41ff478e42e31fd71584d9dae338ffa.jpg" className='w-full' />
+                                            <img src="https://i.pinimg.com/736x/53/6e/ff/536efff82f343938c1fe8ea60f2136ef.jpg" className='w-full' />
                                         </div>
 
-                                        {/* <div className='w-[70%]'>
-                                            <h4 className='text-[16px]'>Gaurav Kumar</h4>
-                                            <h5 className='text-[13px] !mb-0'>2026-12-10</h5>
-                                            <p className='!mt-0 !mb-0'>Very Nice</p>
-                                        </div> */}
+                                        <div className='w-[80%]'>
+                                            <h4 className='text-[17px]'>Gaurav Kumar</h4>
+                                            <h5 className='text-[14px] !mb-0'>2026-12-10</h5>
+                                            <p className='!mt-0 !mb-0'>Grand Blue Dreaming Season 03 is now available to stream and download on RareAnimesIndia. This popular Animation, Comedy anime series, produced by Amazon Prime, offers a thrilling experience with high-quality animation and storyline.
+
+                                            Get the complete season in Dual Audio Hindi-English along with multi-language subtitles. Available in WEB-DL HD 480p, 720p, 1080p formats for the best viewing experience.</p>
+                                            
+                                        </div>
                                     </div>
+
+                                    <Rating name="size-small" defaultValue={5} readOnly/>
+
                                 </div>
+
+                                <div className='review !pt-5 !pb-5 border-b border-[rgba(0,0,0,0.5)] w-full flex items-center justify-between'>
+                                    <div className='info w-full flex items-center !gap-3'>
+                                        <div className='img w-[80px] h-[80px] overflow-hidden rounded-full'>
+                                            <img src="https://i.pinimg.com/736x/37/89/37/37893709dcf60ffe2b5865f20e5d2fe4.jpg" className='w-full' />
+                                        </div>
+
+                                        <div className='w-[80%]'>
+                                            <h4 className='text-[17px]'>Gaurav Kumar</h4>
+                                            <h5 className='text-[14px] !mb-0'>2026-12-10</h5>
+                                            <p className='!mt-0 !mb-0'>Grand Blue Dreaming Season 03 is now available to stream and download on RareAnimesIndia. This popular Animation, Comedy anime series, produced by Amazon Prime, offers a thrilling experience with high-quality animation and storyline.
+
+                                            Get the complete season in Dual Audio Hindi-English along with multi-language subtitles. Available in WEB-DL HD 480p, 720p, 1080p formats for the best viewing experience.</p>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <Rating name="size-small" defaultValue={5} readOnly/>
+
+                                </div>
+
+                                <div className='review !pt-5 !pb-5 border-b border-[rgba(0,0,0,0.5)] w-full flex items-center justify-between'>
+                                    <div className='info w-full flex items-center !gap-3'>
+                                        <div className='img w-[80px] h-[80px] overflow-hidden rounded-full'>
+                                            <img src="https://i.pinimg.com/236x/9e/89/4e/9e894e84cc340c7822a228e6e9577cd6.jpg" className='w-full' />
+                                        </div>
+
+                                        <div className='w-[80%]'>
+                                            <h4 className='text-[17px]'>Gaurav Kumar</h4>
+                                            <h5 className='text-[14px] !mb-0'>2026-12-10</h5>
+                                            <p className='!mt-0 !mb-0'>Grand Blue Dreaming Season 03 is now available to stream and download on RareAnimesIndia. This popular Animation, Comedy anime series, produced by Amazon Prime, offers a thrilling experience with high-quality animation and storyline.
+
+                                            Get the complete season in Dual Audio Hindi-English along with multi-language subtitles. Available in WEB-DL HD 480p, 720p, 1080p formats for the best viewing experience.</p>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <Rating name="size-small" defaultValue={5} readOnly/>
+
+                                </div>
+
+                                <div className='review !pt-5 !pb-5 border-b border-[rgba(0,0,0,0.5)] w-full flex items-center justify-between'>
+                                    <div className='info w-full flex items-center !gap-3'>
+                                        <div className='img w-[80px] h-[80px] overflow-hidden rounded-full'>
+                                            <img src="https://i.pinimg.com/236x/9e/89/4e/9e894e84cc340c7822a228e6e9577cd6.jpg" className='w-full' />
+                                        </div>
+
+                                        <div className='w-[80%]'>
+                                            <h4 className='text-[17px]'>Gaurav Kumar</h4>
+                                            <h5 className='text-[14px] !mb-0'>2026-12-10</h5>
+                                            <p className='!mt-0 !mb-0'>Grand Blue Dreaming Season 03 is now available to stream and download on RareAnimesIndia. This popular Animation, Comedy anime series, produced by Amazon Prime, offers a thrilling experience with high-quality animation and storyline.
+
+                                            Get the complete season in Dual Audio Hindi-English along with multi-language subtitles. Available in WEB-DL HD 480p, 720p, 1080p formats for the best viewing experience.</p>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <Rating name="size-small" defaultValue={5} readOnly/>
+
+                                </div>
+
+                                <div className='review !pt-5 !pb-5 border-b border-[rgba(0,0,0,0.5)] w-full flex items-center justify-between'>
+                                    <div className='info w-full flex items-center !gap-3'>
+                                        <div className='img w-[80px] h-[80px] overflow-hidden rounded-full'>
+                                            <img src="https://i.pinimg.com/236x/9e/89/4e/9e894e84cc340c7822a228e6e9577cd6.jpg" className='w-full' />
+                                        </div>
+
+                                        <div className='w-[80%]'>
+                                            <h4 className='text-[17px]'>Gaurav Kumar</h4>
+                                            <h5 className='text-[14px] !mb-0'>2026-12-10</h5>
+                                            <p className='!mt-0 !mb-0'>Grand Blue Dreaming Season 03 is now available to stream and download on RareAnimesIndia. This popular Animation, Comedy anime series, produced by Amazon Prime, offers a thrilling experience with high-quality animation and storyline.
+
+                                            Get the complete season in Dual Audio Hindi-English along with multi-language subtitles. Available in WEB-DL HD 480p, 720p, 1080p formats for the best viewing experience.</p>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <Rating name="size-small" defaultValue={5} readOnly/>
+
+                                </div>
+                                
+                            </div>
+
+                            <br />
+
+                            <div className='reviewForm bg-[#f6f6f6] !p-4 rounded-md'>
+                                <h2 className='text-[18px]'>Add a review</h2>
+
+                                <form className='w-full !mt-5'>
+                                            <TextField
+                                            id="outlined-multiline-static"
+                                            label="Write a review"
+                                            multiline
+                                            rows={5}
+                                            className='w-full !mb-5'
+                                            />
+                                     <Rating name="size-small" defaultValue={4}/>
+
+                                     <div className='flex items-center !mt-5'>
+                                        <Button className='btn-org'>Submit Review</Button>
+                                     </div>
+
+                                </form>
                             </div>
                         </div>
                         </div>
                     )
                 }
 
+
             </div>
+
+                <div className='container !pt-8'>
+                <h3 className="text-[20px] font-[600]">Related Products</h3>
+                <ProductsSlider items={6}/>
+                </div>
 
         </section>
         </>
