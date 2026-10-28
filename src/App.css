@@ -1,2 +1,5 @@
 @import "tailwindcss";
 
+.css-dizc30-MuiButtonBase-root-MuiButton-root {
+    top: 0px !important;
+}

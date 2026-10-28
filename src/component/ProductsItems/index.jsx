@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "../ProductsItems/style.css";
 import Rating from '@mui/material/Rating';
 import { Link } from "react-router-dom";
@@ -6,9 +6,19 @@ import  Button  from "@mui/material/Button";
 import { FaRegHeart } from "react-icons/fa6";
 import { IoGitCompareOutline } from "react-icons/io5";
 import { MdZoomOutMap } from "react-icons/md";
+import { MyContext } from "../../App";
 
 
 const ProductItems = () => {
+    const context = useContext(MyContext)
+    const [isExpanded, setIsExpanded] = useState(false);
+    const fullText = `boAt EnergyShroom 20000 mAh Power Bank, 2 way 22.5 watt Fast Charging, Quick Charge 3.0, High Temperature and Scratch Resistant,12-Layer Smart IC Protection.`
+
+    const characterLimit = 100;
+    const displayText = isExpanded 
+        ? fullText 
+        : `${fullText.substring(0, characterLimit)}...`; 
+
     return (
         <div className="productItem shadow-lg rounded-md overflow-hidden border-1 border-[rgba(0,0,0,0.1)]">
             <div className="group imgWrapper w-[100%] rounded-md relative">
@@ -24,12 +34,12 @@ const ProductItems = () => {
 
                 <div className="actions absolute top-[-200px] right-[5px] z-50 flex items-center gap-2 flex-col w-[50px] transition-all duration-300 group-hover:top-[15px] opacity-0 group-hover:opacity-100">
                     
-                    <Button className="!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !bg-white !text-black  hover:!bg-[#ff5252] hover:!text-white"><MdZoomOutMap className="text-[18px] text-black hover:text-white"/></Button>
+                    <Button className="!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !bg-white !text-black  hover:!bg-[#ff5252] hover:!text-white group" onClick={()=>context.setOpenProductDetailsModal(true)}><MdZoomOutMap className="text-[18px] text-black hover:text-white"/></Button>
                     
 
-                    <Button className="!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !bg-white !text-black  hover:!bg-[#ff5252] hover:!text-white"><IoGitCompareOutline className="text-[18px] text-black hover:text-white"/></Button>
+                    <Button className="!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !bg-white !text-black  hover:!bg-[#ff5252] hover:!text-white group"><IoGitCompareOutline className="text-[18px] text-black hover:text-white"/></Button>
 
-                    <Button className="!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !bg-white !text-black  hover:!bg-[#ff5252] hover:!text-white"><FaRegHeart className="text-[18px] text-black hover:text-white"/></Button>
+                    <Button className="!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !bg-white !text-black  hover:!bg-[#ff5252] hover:!text-white group"><FaRegHeart className="text-[18px] text-black hover:text-white"/></Button>
                 </div>
             </div>
 
@@ -37,7 +47,13 @@ const ProductItems = () => {
                 <h6 className="text-[13px] !font-[400]">
                     <Link to="/" className="link transition-all !pl-2">boAt</Link></h6>
                 <h3 className="text-[13px] title !mt-2 font-[500] !mb-2 text-[#000] !pl-1">
-                    <Link to="/" className="link transition-all">boAt EnergyShroom 20000 mAh Power Bank, 2 way 22.5 watt Fast Charging, Quick Charge 3.0, High Temperature and Scratch Resistant,12-Layer Smart IC Protection.</Link>
+                    <Link to="/" className="link transition-all"> {displayText}</Link>
+                     <button
+                        onClick={() => setIsExpanded(!isExpanded)}
+                        className="text-[#ff5252] font-semibold hover:underline ml-1 focus:outline-none"
+                    >
+                        {isExpanded ? 'Show Less' : 'Show More'}
+                    </button>
                     </h3>
                         <Rating name="size-small" defaultValue={4} size="small" readOnly/>
 

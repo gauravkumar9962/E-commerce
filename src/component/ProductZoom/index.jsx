@@ -48,7 +48,7 @@ const ProductZoom = () => {
 
     return (
         <>
-    <div className="!gap-3">
+    <div className="!gap-3 !mt-[15px]">
 
           <div className="zoomContainer w-[120%]">
             <Swiper
