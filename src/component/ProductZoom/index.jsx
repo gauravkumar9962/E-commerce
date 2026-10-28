@@ -115,8 +115,6 @@ const ProductZoom = () => {
                             </div>
                         </SwiperSlide>
                         
-                        <SwiperSlide ></SwiperSlide>
-                        
             </Swiper>
         </div>
 

@@ -22,7 +22,7 @@ const ProductItems = () => {
     return (
         <div className="productItem shadow-lg rounded-md overflow-hidden border-1 border-[rgba(0,0,0,0.1)]">
             <div className="group imgWrapper w-[100%] rounded-md relative">
-                <Link to="/">
+                <Link to="/productDetails/:id">
                 <div className="img h-[220px] overflow-hidden">
                     <img src="https://cdn1.jiomartjcp.com/v2/catalog-cloud/ccprod/t.resize(w:300)/products/assets/item/free/original/JKuiYzOuq9-Boat-EnergyShroom-20K-PB400-Black-494351842-i-1-1200Wx1200H.jpeg" className="w-full h-full"/>
 
@@ -45,9 +45,9 @@ const ProductItems = () => {
 
             <div className="info p-3 !py-5">
                 <h6 className="text-[13px] !font-[400]">
-                    <Link to="/" className="link transition-all !pl-2">boAt</Link></h6>
+                    <Link to="/productDetails/:id" className="link transition-all !pl-2">boAt</Link></h6>
                 <h3 className="text-[13px] title !mt-2 font-[500] !mb-2 text-[#000] !pl-1">
-                    <Link to="/" className="link transition-all"> {displayText}</Link>
+                    <Link to="/productDetails/:id" className="link transition-all"> {displayText}</Link>
                      <button
                         onClick={() => setIsExpanded(!isExpanded)}
                         className="text-[#ff5252] font-semibold hover:underline ml-1 focus:outline-none"

@@ -39,6 +39,11 @@ h1, h2, h3, h4, h5, h6{
   padding: 7px 20px !important;
 }
 
+.btn-lg {
+  font-size: 18px !important;
+  padding: 10px 20px !important;
+}
+
 .btn-org:hover {
   background: #171717 !important;
 }
@@ -235,11 +240,6 @@ footer from input::placeholder {
   border-radius: 0px !important;
   left: auto !important;
   right: 0px !important;
-}
-
-.zoomProductSliderThumb
-.swiper-wrapper {
-  padding-left: 48px;
 }
 
 .productContent
