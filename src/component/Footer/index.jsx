@@ -4,7 +4,7 @@ import { TfiDropbox } from "react-icons/tfi";
 import { IoWalletOutline } from "react-icons/io5";
 import { FiGift } from "react-icons/fi";
 import { BiSupport } from "react-icons/bi";
-import { Link, Links } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { HiOutlineChatAlt2 } from "react-icons/hi";
 import Button from '@mui/material/Button';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -20,8 +20,7 @@ import { SiPaytm } from "react-icons/si";
 import { FaGooglePay } from "react-icons/fa6";
 
 
-
-const Footer = () => {
+const Footer = () => { 
     return (
         <>
             <footer className='py-6 bg-[#f6f6f6]'>

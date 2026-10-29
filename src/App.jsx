@@ -14,14 +14,21 @@ import { IoCloseSharp } from 'react-icons/io5'
 import { ProductDetailsComponent } from './component/ProductDetail'
 import Login from './Pages/Login'
 import Register from './Pages/Register'
+import CartPanel from './component/CartPanel'
 
 const MyContext = createContext();
 
 function App() {
 
   const [openProductDetailsModal, setOpenProductDetailsModal] = useState(false);
-   const [fullWidth, setFullWidth] = useState(true);
-    const [maxWidth, setMaxWidth] = useState('lg');
+   const [fullWidth] = useState(true);
+    const [maxWidth] = useState('lg');
+
+    const [openCartPanel, setOpenCartPanel] = useState(false);
+
+    const toggleCartPanel = (newOpen) => () => {
+      setOpenCartPanel(newOpen);
+    };
 
   const handleCloseProductDetailsModal = () => {
     setOpenProductDetailsModal(false);
@@ -29,7 +36,10 @@ function App() {
 
 
   const values = {
-    setOpenProductDetailsModal
+    setOpenProductDetailsModal,
+    setOpenCartPanel,
+    toggleCartPanel,
+    openCartPanel
   }
 
   return (
@@ -45,6 +55,7 @@ function App() {
         <Route path={"/register"} exact={true} element={<Register/>}/>
       </Routes>
       <Footer/>
+      <CartPanel/>
     </MyContext.Provider>
     </BrowserRouter>
 
@@ -71,6 +82,8 @@ function App() {
           </div>
         </DialogContent>
       </Dialog>
+
+      
     </>
   )
 }

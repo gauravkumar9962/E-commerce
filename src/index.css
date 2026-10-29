@@ -263,3 +263,9 @@ input[type=number]::-webkit-outer-spin-button {
 .reviewScroll::-webkit-scrollbar-thumb {
   background: #ff5252 !important;
 }
+
+.cartPanel
+.MuiPaper-root {
+  width: 400px !important;
+  overflow: hidden;
+}

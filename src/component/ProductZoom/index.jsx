@@ -34,7 +34,7 @@ const ProductZoom = () => {
         "https://teamtsb.com/portfolio/item-12.jpg",
         "https://teamtsb.com/portfolio/dalyla-coffee-lifestyle.jpg",
         "https://teamtsb.com/portfolio/item-2.jpg",
-        "https://m.media-amazon.com/images/I/61T18EfkX0L._SX679_.jpg",
+        "https://i.pinimg.com/736x/59/3e/09/593e096b0fd57b2ce3c3f4e4c8780d16.jpg",
     ];
     const [slideIndex, setSliderIndex] = useState(0);
     const zoomSliderBig = useRef();
@@ -110,7 +110,7 @@ const ProductZoom = () => {
 
                         <SwiperSlide>
                             <div className={`item rounded-md aspect-[4/3] overflow-hidden cursor-pointer group ${slideIndex===5 ? 'opacity-100' : 'opacity-50'}`} onClick={() => goto(5)}>
-                                <img src="https://m.media-amazon.com/images/I/61T18EfkX0L._SX679_.jpg"
+                                <img src="https://i.pinimg.com/736x/59/3e/09/593e096b0fd57b2ce3c3f4e4c8780d16.jpg"
                                 className="w-full h-full object-cover transition-all group-hover:scale-105"/>
                             </div>
                         </SwiperSlide>

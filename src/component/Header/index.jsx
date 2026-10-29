@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Search from "../Search";
 import Stack from '@mui/material/Stack';
@@ -9,8 +9,10 @@ import { MdShoppingCart } from "react-icons/md";
 import { IoMdGitCompare } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa6";
 import Tooltip from '@mui/material/Tooltip';
+import { MyContext } from "../../App";
 
 const Header = () => {
+    const context = useContext(MyContext);
     return (
         <header className="bg-white">
             <div className="top-strip !py-2 border-t-[5px] border-gray-250 border-b-[1px]">
@@ -85,7 +87,7 @@ const Header = () => {
                             <li>
                                 <Tooltip title="Cart">
                                     <Stack spacing={2} direction="row">
-                                        <IconButton aria-label="show 99 unread messages">
+                                        <IconButton aria-label="show 99 unread messages" onClick={()=>context.setOpenCartPanel(true)}>
                                             <Badge color="secondary" badgeContent={100}>
                                                 <MdShoppingCart />
                                             </Badge>
