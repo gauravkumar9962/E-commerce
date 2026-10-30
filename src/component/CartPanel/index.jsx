@@ -21,7 +21,7 @@ const CartPanel =()=> {
         <div className='cartItem w-full flex items-center !gap-4 border-b border-[rgba(0,0,0,0.3)] !pb-7 !pt-5'>
             <div className='img w-[25%] overflow-hidden h-[90px] rounded-md'>
             <Link to={"/productDetails/89854"} className="block group">
-              <img src="https://i.pinimg.com/736x/8a/ad/10/8aad10cfb5945ba2cc9f74c533fcb1c1.jpg" className='w-full group-hover:scale-105'/>
+              <img src="https://i.pinimg.com/736x/8a/ad/10/8aad10cfb5945ba2cc9f74c533fcb1c1.jpg" className='w-full group-hover:scale-105 transition-all'/>
             </Link>
             </div>
 
@@ -41,7 +41,7 @@ const CartPanel =()=> {
         <div className='cartItem w-full flex items-center !gap-4 border-b border-[rgba(0,0,0,0.3)] !pb-7 !pt-5'>
             <div className='img w-[25%] overflow-hidden h-[90px] rounded-md'>
             <Link to={"/productDetails/89854"} className="block group">
-              <img src="https://i.pinimg.com/736x/8a/ad/10/8aad10cfb5945ba2cc9f74c533fcb1c1.jpg" className='w-full group-hover:scale-105'/>
+              <img src="https://i.pinimg.com/736x/8a/ad/10/8aad10cfb5945ba2cc9f74c533fcb1c1.jpg" className='w-full group-hover:scale-105 transition-all'/>
             </Link>
             </div>
 
@@ -61,7 +61,7 @@ const CartPanel =()=> {
           <div className='cartItem w-full flex items-center !gap-4 border-b border-[rgba(0,0,0,0.3)] !pb-7 !pt-5'>
             <div className='img w-[25%] overflow-hidden h-[90px] rounded-md'>
             <Link to={"/productDetails/89854"} className="block group">
-              <img src="https://i.pinimg.com/736x/8a/ad/10/8aad10cfb5945ba2cc9f74c533fcb1c1.jpg" className='w-full group-hover:scale-105'/>
+              <img src="https://i.pinimg.com/736x/8a/ad/10/8aad10cfb5945ba2cc9f74c533fcb1c1.jpg" className='w-full group-hover:scale-105 transition-all'/>
             </Link>
             </div>
 
@@ -81,7 +81,7 @@ const CartPanel =()=> {
           <div className='cartItem w-full flex items-center !gap-4 border-b border-[rgba(0,0,0,0.3)] !pb-7 !pt-5'>
             <div className='img w-[25%] overflow-hidden h-[90px] rounded-md'>
             <Link to={"/productDetails/89854"} className="block group">
-              <img src="https://i.pinimg.com/736x/8a/ad/10/8aad10cfb5945ba2cc9f74c533fcb1c1.jpg" className='w-full group-hover:scale-105'/>
+              <img src="https://i.pinimg.com/736x/8a/ad/10/8aad10cfb5945ba2cc9f74c533fcb1c1.jpg" className='w-full group-hover:scale-105 transition-all'/>
             </Link>
             </div>
 
@@ -101,7 +101,7 @@ const CartPanel =()=> {
           <div className='cartItem w-full flex items-center !gap-4 border-b border-[rgba(0,0,0,0.3)] !pb-7 !pt-5'>
             <div className='img w-[25%] overflow-hidden h-[90px] rounded-md'>
             <Link to={"/productDetails/89854"} className="block group">
-              <img src="https://i.pinimg.com/736x/8a/ad/10/8aad10cfb5945ba2cc9f74c533fcb1c1.jpg" className='w-full group-hover:scale-105'/>
+              <img src="https://i.pinimg.com/736x/8a/ad/10/8aad10cfb5945ba2cc9f74c533fcb1c1.jpg" className='w-full group-hover:scale-105 transition-all'/>
             </Link>
             </div>
 
@@ -121,7 +121,7 @@ const CartPanel =()=> {
           <div className='cartItem w-full flex items-center !gap-4 border-b border-[rgba(0,0,0,0.3)] !pb-7 !pt-5'>
             <div className='img w-[25%] overflow-hidden h-[90px] rounded-md'>
             <Link to={"/productDetails/89854"} className="block group">
-              <img src="https://i.pinimg.com/736x/8a/ad/10/8aad10cfb5945ba2cc9f74c533fcb1c1.jpg" className='w-full group-hover:scale-105'/>
+              <img src="https://i.pinimg.com/736x/8a/ad/10/8aad10cfb5945ba2cc9f74c533fcb1c1.jpg" className='w-full group-hover:scale-105 transition-all'/>
             </Link>
             </div>
 

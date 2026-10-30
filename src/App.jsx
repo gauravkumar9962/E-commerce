@@ -15,6 +15,7 @@ import { ProductDetailsComponent } from './component/ProductDetail'
 import Login from './Pages/Login'
 import Register from './Pages/Register'
 import CartPanel from './component/CartPanel'
+import CartPage from './Pages/CartPage'
 
 const MyContext = createContext();
 
@@ -53,6 +54,7 @@ function App() {
         <Route path={"/productDetails/:id"} exact={true} element={<ProductDetails/>}/>
         <Route path={"/Login"} exact={true} element={<Login/>}/>
         <Route path={"/register"} exact={true} element={<Register/>}/>
+        <Route path={"/cart"} exact={true} element={<CartPage/>}/>
       </Routes>
       <Footer/>
       <CartPanel/>

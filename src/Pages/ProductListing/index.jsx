@@ -76,32 +76,32 @@ const ProductListing = () => {
                                 <span className='text-[14px] font-[540] !pl-3 text-[#070707] '>Sort By</span>
 
                                 <Button
-        id={buttonId}
-        aria-controls={open ? menuId : undefined}
-        aria-haspopup="true"
-        aria-expanded={open}
-        onClick={handleClick}
-        className='!bg-white !text-[12.5px] !text-[#000] !border-1 !border-[#000]'
-      >
-        Dashboard
-      </Button>
-      <Menu
-        id={menuId}
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        slotProps={{
-          list: {
-            'aria-labelledby': buttonId,
-          },
-        }}
-      >
-        <MenuItem onClick={handleClose} className='!text-[13px] !text-[#000] !capitalize'>Sales, highest to lowest</MenuItem>
-        <MenuItem onClick={handleClose} className='!text-[13px] !text-[#000] !capitalize'>Relevance</MenuItem>
-        <MenuItem onClick={handleClose} className='!text-[13px] !text-[#000] !capitalize'>Name, A to Z</MenuItem>
-        <MenuItem onClick={handleClose} className='!text-[13px] !text-[#000] !capitalize'>Name, Z to A</MenuItem>
-        <MenuItem onClick={handleClose} className='!text-[13px] !text-[#000] !capitalize'>Price, high to low</MenuItem>
-      </Menu>
+                                id={buttonId}
+                                aria-controls={open ? menuId : undefined}
+                                aria-haspopup="true"
+                                aria-expanded={open}
+                                onClick={handleClick}
+                                className='!bg-white !text-[12.5px] !text-[#000] !border-1 !border-[#000]'
+                            >
+                                Dashboard
+                            </Button>
+                            <Menu
+                                id={menuId}
+                                anchorEl={anchorEl}
+                                open={open}
+                                onClose={handleClose}
+                                slotProps={{
+                                list: {
+                                    'aria-labelledby': buttonId,
+                                },
+                                }}
+                            >
+                                <MenuItem onClick={handleClose} className='!text-[13px] !text-[#000] !capitalize'>Sales, highest to lowest</MenuItem>
+                                <MenuItem onClick={handleClose} className='!text-[13px] !text-[#000] !capitalize'>Relevance</MenuItem>
+                                <MenuItem onClick={handleClose} className='!text-[13px] !text-[#000] !capitalize'>Name, A to Z</MenuItem>
+                                <MenuItem onClick={handleClose} className='!text-[13px] !text-[#000] !capitalize'>Name, Z to A</MenuItem>
+                                <MenuItem onClick={handleClose} className='!text-[13px] !text-[#000] !capitalize'>Price, high to low</MenuItem>
+                            </Menu>
                             </div>
                         </div>
 
