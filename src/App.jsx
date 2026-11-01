@@ -16,13 +16,17 @@ import Login from './Pages/Login'
 import Register from './Pages/Register'
 import CartPanel from './component/CartPanel'
 import CartPage from './Pages/CartPage'
+import Verify from './component/Verify'
+import toast, { Toaster } from 'react-hot-toast';
+import ForgetPassword from './Pages/ForgetPassword'
 
 const MyContext = createContext();
 
 function App() {
 
-  const [openProductDetailsModal, setOpenProductDetailsModal] = useState(false);
-   const [fullWidth] = useState(true);
+    const notify = () => toast('Here is your toast.')
+    const [openProductDetailsModal, setOpenProductDetailsModal] = useState(false);
+    const [fullWidth] = useState(true);
     const [maxWidth] = useState('lg');
 
     const [openCartPanel, setOpenCartPanel] = useState(false);
@@ -35,12 +39,21 @@ function App() {
     setOpenProductDetailsModal(false);
   };
 
+  const openAlertBox =(status, msg)=>{
+    if(status==="success"){
+      toast.success(msg);
+    }
+    if(status==="error"){
+      toast.error(msg);
+    }
+  }
 
   const values = {
     setOpenProductDetailsModal,
     setOpenCartPanel,
     toggleCartPanel,
-    openCartPanel
+    openCartPanel,
+    openAlertBox
   }
 
   return (
@@ -55,11 +68,15 @@ function App() {
         <Route path={"/Login"} exact={true} element={<Login/>}/>
         <Route path={"/register"} exact={true} element={<Register/>}/>
         <Route path={"/cart"} exact={true} element={<CartPage/>}/>
+        <Route path={"/verify"} exact={true} element={<Verify/>}/>
+        <Route path={"/forget-password"} exact={true} element={<ForgetPassword/>}/>
       </Routes>
       <Footer/>
       <CartPanel/>
     </MyContext.Provider>
     </BrowserRouter>
+
+     <Toaster />
 
      <Dialog
         fullWidth={fullWidth}
