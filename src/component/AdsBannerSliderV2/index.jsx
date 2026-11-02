@@ -14,39 +14,39 @@ const AdsBannerSliderV2 = (props) => {
                 modules={[Navigation, FreeMode]}
                 spaceBetween={50}
                 slidesPerView={props.items}
-                
-                    freeMode={true}
+
+                freeMode={true}
                 navigation
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
                 className='smBtn'
             >
                 <SwiperSlide>
-                    <BannerBoxV2 info="left" image={'https://www.shutterstock.com/image-photo/set-cleaning-robot-vacuum-cleaner-260nw-2311299831.jpg'} link={'/'}/>
+                    <BannerBoxV2 info="left" image={'https://www.shutterstock.com/image-photo/set-cleaning-robot-vacuum-cleaner-260nw-2311299831.jpg'} link={'/'} />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <BannerBoxV2 info="left" image={'https://www.shutterstock.com/image-photo/set-cleaning-robot-vacuum-cleaner-260nw-2311299831.jpg'} link={'/'}/>
+                    <BannerBoxV2 info="left" image={'https://www.shutterstock.com/image-photo/set-cleaning-robot-vacuum-cleaner-260nw-2311299831.jpg'} link={'/'} />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <BannerBoxV2 info="left" image={'https://www.shutterstock.com/image-photo/set-cleaning-robot-vacuum-cleaner-260nw-2311299831.jpg'} link={'/'}/>
+                    <BannerBoxV2 info="left" image={'https://www.shutterstock.com/image-photo/set-cleaning-robot-vacuum-cleaner-260nw-2311299831.jpg'} link={'/'} />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <BannerBoxV2 info="left" image={'https://www.shutterstock.com/image-photo/set-cleaning-robot-vacuum-cleaner-260nw-2311299831.jpg'} link={'/'}/>
+                    <BannerBoxV2 info="left" image={'https://www.shutterstock.com/image-photo/set-cleaning-robot-vacuum-cleaner-260nw-2311299831.jpg'} link={'/'} />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <BannerBoxV2 info="left" image={'https://www.shutterstock.com/image-photo/set-cleaning-robot-vacuum-cleaner-260nw-2311299831.jpg'} link={'/'}/>
+                    <BannerBoxV2 info="left" image={'https://www.shutterstock.com/image-photo/set-cleaning-robot-vacuum-cleaner-260nw-2311299831.jpg'} link={'/'} />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <BannerBoxV2 info="left" image={'https://www.shutterstock.com/image-photo/set-cleaning-robot-vacuum-cleaner-260nw-2311299831.jpg'} link={'/'}/>
+                    <BannerBoxV2 info="left" image={'https://www.shutterstock.com/image-photo/set-cleaning-robot-vacuum-cleaner-260nw-2311299831.jpg'} link={'/'} />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <BannerBoxV2 info="left" image={'https://www.shutterstock.com/image-photo/set-cleaning-robot-vacuum-cleaner-260nw-2311299831.jpg'} link={'/'}/>
+                    <BannerBoxV2 info="left" image={'https://www.shutterstock.com/image-photo/set-cleaning-robot-vacuum-cleaner-260nw-2311299831.jpg'} link={'/'} />
                 </SwiperSlide>
 
             </Swiper>

@@ -14,39 +14,39 @@ const AdsBannerSlider = (props) => {
                 modules={[Navigation, FreeMode]}
                 spaceBetween={50}
                 slidesPerView={props.items}
-                
-                    freeMode={true}
+
+                freeMode={true}
                 navigation
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
                 className='smBtn'
             >
                 <SwiperSlide>
-                    <BannerBox img={'https://cdn1.jiomartjcp.com/v2/jiomart-fynd/jio-pd/t.resize(w:450)/company/1/applications/685945f46c8c7aee3f3af605/theme/pictures/free/original/Ganesh-chaturthi-banner-V3-1788532648098.png.png'} link={'/'}/>
+                    <BannerBox img={'https://cdn1.jiomartjcp.com/v2/jiomart-fynd/jio-pd/t.resize(w:450)/company/1/applications/685945f46c8c7aee3f3af605/theme/pictures/free/original/Ganesh-chaturthi-banner-V3-1788532648098.png.png'} link={'/'} />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <BannerBox img={'https://cdn1.jiomartjcp.com/v2/jiomart-fynd/jio-pd/t.resize(w:450)/company/1/applications/685945f46c8c7aee3f3af605/theme/pictures/free/original/Ganesh-chaturthi-banner-V3-1788532648098.png.png'} link={'/'}/>
+                    <BannerBox img={'https://cdn1.jiomartjcp.com/v2/jiomart-fynd/jio-pd/t.resize(w:450)/company/1/applications/685945f46c8c7aee3f3af605/theme/pictures/free/original/Ganesh-chaturthi-banner-V3-1788532648098.png.png'} link={'/'} />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <BannerBox img={'https://cdn1.jiomartjcp.com/v2/jiomart-fynd/jio-pd/t.resize(w:450)/company/1/applications/685945f46c8c7aee3f3af605/theme/pictures/free/original/Ganesh-chaturthi-banner-V3-1788532648098.png.png'} link={'/'}/>
+                    <BannerBox img={'https://cdn1.jiomartjcp.com/v2/jiomart-fynd/jio-pd/t.resize(w:450)/company/1/applications/685945f46c8c7aee3f3af605/theme/pictures/free/original/Ganesh-chaturthi-banner-V3-1788532648098.png.png'} link={'/'} />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <BannerBox img={'https://cdn1.jiomartjcp.com/v2/jiomart-fynd/jio-pd/t.resize(w:450)/company/1/applications/685945f46c8c7aee3f3af605/theme/pictures/free/original/Ganesh-chaturthi-banner-V3-1788532648098.png.png'} link={'/'}/>
+                    <BannerBox img={'https://cdn1.jiomartjcp.com/v2/jiomart-fynd/jio-pd/t.resize(w:450)/company/1/applications/685945f46c8c7aee3f3af605/theme/pictures/free/original/Ganesh-chaturthi-banner-V3-1788532648098.png.png'} link={'/'} />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <BannerBox img={'https://cdn1.jiomartjcp.com/v2/jiomart-fynd/jio-pd/t.resize(w:450)/company/1/applications/685945f46c8c7aee3f3af605/theme/pictures/free/original/Ganesh-chaturthi-banner-V3-1788532648098.png.png'} link={'/'}/>
+                    <BannerBox img={'https://cdn1.jiomartjcp.com/v2/jiomart-fynd/jio-pd/t.resize(w:450)/company/1/applications/685945f46c8c7aee3f3af605/theme/pictures/free/original/Ganesh-chaturthi-banner-V3-1788532648098.png.png'} link={'/'} />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <BannerBox img={'https://cdn1.jiomartjcp.com/v2/jiomart-fynd/jio-pd/t.resize(w:450)/company/1/applications/685945f46c8c7aee3f3af605/theme/pictures/free/original/Ganesh-chaturthi-banner-V3-1788532648098.png.png'} link={'/'}/>
+                    <BannerBox img={'https://cdn1.jiomartjcp.com/v2/jiomart-fynd/jio-pd/t.resize(w:450)/company/1/applications/685945f46c8c7aee3f3af605/theme/pictures/free/original/Ganesh-chaturthi-banner-V3-1788532648098.png.png'} link={'/'} />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <BannerBox img={'https://cdn1.jiomartjcp.com/v2/jiomart-fynd/jio-pd/t.resize(w:450)/company/1/applications/685945f46c8c7aee3f3af605/theme/pictures/free/original/Ganesh-chaturthi-banner-V3-1788532648098.png.png'} link={'/'}/>
+                    <BannerBox img={'https://cdn1.jiomartjcp.com/v2/jiomart-fynd/jio-pd/t.resize(w:450)/company/1/applications/685945f46c8c7aee3f3af605/theme/pictures/free/original/Ganesh-chaturthi-banner-V3-1788532648098.png.png'} link={'/'} />
                 </SwiperSlide>
 
             </Swiper>
