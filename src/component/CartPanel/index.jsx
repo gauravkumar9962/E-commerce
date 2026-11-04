@@ -17,7 +17,7 @@ const CartPanel =()=> {
         </div>
         
         {/* Drawer Content */}
-        <div className='scroll w-full !max-h-[400px] overflow-y-scroll overflow-x-hidden !py-3 !px-4'>
+        <div className='scroll w-full !max-h-[550px] overflow-y-scroll overflow-x-hidden !py-3 !px-4'>
         <div className='cartItem w-full flex items-center !gap-4 border-b border-[rgba(0,0,0,0.3)] !pb-7 !pt-5'>
             <div className='img w-[25%] overflow-hidden h-[90px] rounded-md'>
             <Link to={"/productDetails/89854"} className="block group">
@@ -144,7 +144,7 @@ const CartPanel =()=> {
 
         <div className="bottomSec absolute bottom-[10px] left-[10px] w-full overflow-hidden !py-5 !pr-5">
 
-        <div className="bottomInfo !py-3 !px-4 w-full border-t border-[rgba(0,0,0,0.3)] flex items-center justify-between flex-col">
+        <div className="bottomInfo !py-3 !px-4 w-full border-t border-[rgba(0,0,0,0.7)] flex items-center justify-between flex-col">
             <div className="flex items-center justify-between w-full">
                 <span className="text-[14px] font-[600]">1 Item</span>
                 <span className="text-[#ff5252] font-bold">$86.23</span>
@@ -176,7 +176,7 @@ const CartPanel =()=> {
 
             <div className="flex items-center justify-between w-full gap-5">
                 <Link to={"cart"} className=" w-[50%] d-block"><Button className="btn-org btn-lg w-full">View Cart</Button></Link>
-                <Link to={"checkout"} className=" w-[50%] d-block"><Button className="btn-org btn-lg w-full">Checkout</Button></Link>
+                <Link to={"checkout"} className=" w-[50%] d-block"><Button className="btn-border btn-lg w-full">Checkout</Button></Link>
             </div>
         </div>
         </div>
