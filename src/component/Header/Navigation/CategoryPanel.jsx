@@ -20,7 +20,7 @@ const CategoryPanel = (props) => {
 
             <Divider />
 
-            <CategoryCollapse/>
+            <CategoryCollapse />
         </Box>
     );
 

@@ -20,7 +20,7 @@ import { SiPaytm } from "react-icons/si";
 import { FaGooglePay } from "react-icons/fa6";
 
 
-const Footer = () => { 
+const Footer = () => {
     return (
         <>
             <footer className='py-6 bg-[#f6f6f6]'>
@@ -145,7 +145,7 @@ const Footer = () => {
                                     <input type="text" className='w-full h-[45px] border outline-none !p1-4 rounded-sm !mb-4 focus:border-[#ff5252]' placeholder='Your Email Adderss' />
 
                                     <Button className='btn-org'>SUBSCRIBE</Button>
-                                    <FormControlLabel control={<Checkbox/>} label="I agree to the term and condition and the privacy policy" />
+                                    <FormControlLabel control={<Checkbox />} label="I agree to the term and condition and the privacy policy" />
 
                                 </form>
                             </div>
@@ -191,10 +191,10 @@ const Footer = () => {
                     <p className='text-[13px] text-center mb-0'>@ 2026 - Ecommerce Template</p>
 
                     <div className='flex items-center justify-between gap-6'>
-                        <li><RiVisaLine className='text-[35px]'/></li>
-                        <li><RiPaypalFill className='text-[20px]'/></li>
-                        <li><SiPaytm className='text-[35px]'/></li>
-                        <li><FaGooglePay className='text-[35px]'/></li>
+                        <li><RiVisaLine className='text-[35px]' /></li>
+                        <li><RiPaypalFill className='text-[20px]' /></li>
+                        <li><SiPaytm className='text-[35px]' /></li>
+                        <li><FaGooglePay className='text-[35px]' /></li>
                     </div>
 
                 </div>

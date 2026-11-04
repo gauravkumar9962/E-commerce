@@ -15,12 +15,13 @@ import { ProductDetailsComponent } from './component/ProductDetail'
 import Login from './Pages/Login'
 import Register from './Pages/Register'
 import CartPanel from './component/CartPanel'
-import CartPage from './Pages/CartPage'
+import CartPage from './Pages/Cart'
 import Verify from './component/Verify'
 import toast, { Toaster } from 'react-hot-toast';
 import ForgetPassword from './Pages/ForgetPassword'
 import Checkout from './Pages/Checkout'
 import MyAccount from './Pages/MyAccount'
+import MyList from './Pages/MyList'
 
 const MyContext = createContext();
 
@@ -77,6 +78,7 @@ function App() {
         <Route path={"/forget-password"} exact={true} element={<ForgetPassword/>}/>
         <Route path={"/checkout"} exact={true} element={<Checkout/>}/>
         <Route path={"/my-account"} exact={true} element={<MyAccount/>}/>
+        <Route path={"/my-list"} exact={true} element={<MyList/>}/>
       </Routes>
       <Footer/>
       <CartPanel/>

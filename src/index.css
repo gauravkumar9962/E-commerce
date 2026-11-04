@@ -53,6 +53,11 @@ h1, h2, h3, h4, h5, h6{
   padding: 10px 20px !important;
 }
 
+.btn-sm {
+  font-size: 12px !important;
+  padding: 5px 20px !important;
+}
+
 .btn-org:hover {
   background: #171717 !important;
   color: #fff !important
@@ -315,6 +320,7 @@ input[type=number]::-webkit-outer-spin-button {
   top: 50%;
   left: 0px;
   background: #ff5252;
+  opacity: 0;
   transition: all 0.3s ease-in-out;
 }
 

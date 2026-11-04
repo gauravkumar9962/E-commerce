@@ -126,19 +126,19 @@ const Header = () => {
                                             anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
                                         >
                                             <Link to={"/my-account"}>
-                                            <MenuItem onClick={handleClose} className="flex gap-2">
-                                                <FaRegUser className="text-[14px]"/> Profile
-                                            </MenuItem>
+                                                <MenuItem onClick={handleClose} className="flex gap-2">
+                                                    <FaRegUser className="text-[14px]" /> Profile
+                                                </MenuItem>
                                             </Link>
                                             <Link to={"/my-orders"}>
-                                            <MenuItem onClick={handleClose} className="flex gap-2">
-                                                <IoBagCheckOutline className="text-[18px]" /> <span className="text-[14px]">Order</span>
-                                            </MenuItem>
+                                                <MenuItem onClick={handleClose} className="flex gap-2">
+                                                    <IoBagCheckOutline className="text-[18px]" /> <span className="text-[14px]">Order</span>
+                                                </MenuItem>
                                             </Link>
                                             <Link to={"/my-list"}>
-                                            <MenuItem onClick={handleClose} className="flex gap-2">
-                                                <IoMdHeartEmpty className="text-[18px]" /> <span className="text-[14px]">My List</span>
-                                            </MenuItem>
+                                                <MenuItem onClick={handleClose} className="flex gap-2">
+                                                    <IoMdHeartEmpty className="text-[18px]" /> <span className="text-[14px]">My List</span>
+                                                </MenuItem>
                                             </Link>
                                             <MenuItem onClick={handleClose} className="flex gap-2">
                                                 <IoIosLogOut className="text-[18px]" /> <span className="text-[14px]">Logout</span>
