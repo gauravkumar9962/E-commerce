@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+body {
+    font-family: "Raleway", sans-serif;
+}
+
+.MuiBadge-badge{
+    background: #ff5252 !important;
+}
