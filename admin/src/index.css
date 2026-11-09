@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 body {
-    font-family: "Raleway", sans-serif;
+    font-family: "Montserrat", serif;
+    background-color: #f1f1f1;
 }
 
 .MuiBadge-badge{
@@ -10,4 +11,14 @@ body {
 
 .ReactCollapse--collapse {
   transition: height 300ms;
+}
+
+.btn-blue{
+    background: #3872fa !important;
+    color: #fff !important;
+    padding: 10px 20px !important;
+}
+
+.btn-blue:hover{
+    background: #183a89 !important;
 }
