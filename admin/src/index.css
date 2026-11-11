@@ -22,3 +22,20 @@ body {
 .btn-blue:hover{
     background: #183a89 !important;
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: #fff !important;
+    background-color: #ff5252;
+    border-radius: 100%;
+}
+
+.swiper-button-prev svg,
+.swiper-button-next svg {
+  width: 21px !important;
+  height: 21px !important;
+  fill: #000 !important;
+    width: 45px !important;
+  height: 20px !important;
+  min-width: 15px;
+}

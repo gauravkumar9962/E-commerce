@@ -5,6 +5,8 @@ import Button from "@mui/material/Button";
 import { FaAngleDown } from "react-icons/fa6";
 import Badge from "../../Components/Badge";
 import { Collapse } from "react-collapse";
+import Tailwind_Css_Table from "../../Components/Tailwind_Css_Table";
+import Material_UI_Table from "../../Components/Material_UI_Table";
 
 const Dashboard = () => {
 
@@ -20,7 +22,7 @@ const Dashboard = () => {
 
     return (
         <>
-            <div className="w-full py-2! px-5! bg-white border border-[rgba(0,0,0,0.2)] flex items-center gap-8 mb-5! justify-between rounded-4xl">
+            <div className="w-full py-2! px-5! bg-gradient-to-r from-red-50 to-[#dffce3] border border-[rgba(0,0,0,0.2)] flex items-center gap-8 mb-5! justify-between rounded-4xl">
                 <div className="info">
                     <h1 className="text-[35px] font-bold leading-10 mb-3!">Good Morning,<br /> <span className="flex items-center gap-5">Cameron<FaHandsClapping className="text-[#2ccf86] text-[30px]" /></span></h1>
                     <p>Here's What happening on your store today. See the statistics at onec.</p>
@@ -31,6 +33,8 @@ const Dashboard = () => {
             <div>
                 <DashboardBoxes />
 
+                <Tailwind_Css_Table/>
+                <Material_UI_Table/>
 
                 <div className="card my-5! shadow-md rounded-lg bg-white">
                     <div className="flex items-center justify-between py-5! px-5!">
@@ -42,7 +46,7 @@ const Dashboard = () => {
                             <thead className="text-xs text-body bg-gray-50 border-b rounded-base border-default">
                                 <tr>
                                     <th scope="col" className="!px-6 !py-3">
-
+                                        &nbsp;
                                     </th >
                                     <th scope="col" className="!px-6 !py-4 whitespace-nowrap">
                                         Order ID
@@ -83,7 +87,7 @@ const Dashboard = () => {
 
                             <tbody>
                                 <tr className="bg-neutral-primary">
-                                    <Button className="!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !bg-[#f1f1f1] mt-3!" onClick={() => isShowOrderdProduct(0)}>
+                                    <Button className="!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !bg-[#f1f1f1] ml-5! mt-3!" onClick={() => isShowOrderdProduct(0)}>
 
                                         {
                                             <FaAngleDown className={`text-[16px] text-[rgba(0,0,0,0.7)] transition-all ${isOpenOrederdProduct === 0 ? 'rotate-180' : ''}`} />
@@ -205,7 +209,7 @@ const Dashboard = () => {
 
                             <tbody>
                                 <tr className="bg-neutral-primary">
-                                    <Button className="!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !bg-[#f1f1f1] mt-3!" onClick={() => isShowOrderdProduct(1)}>
+                                    <Button className="!w-[35px] !h-[35px] !min-w-[35px] !rounded-full !bg-[#f1f1f1] ml-5! mt-3!" onClick={() => isShowOrderdProduct(1)}>
 
                                         {
                                             <FaAngleDown className={`text-[16px] text-[rgba(0,0,0,0.7)] transition-all ${isOpenOrederdProduct === 1 ? 'rotate-180' : ''}`} />
@@ -325,8 +329,11 @@ const Dashboard = () => {
                             </tbody>
                         </table>
                     </div>
+
+
                 </div>
             </div>
+
         </>
     )
 }

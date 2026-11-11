@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Button from '@mui/material/Button'
-import { RiMenu2Line } from "react-icons/ri";
 import Badge from '@mui/material/Badge';
 import IconButton from '@mui/material/IconButton';
 import { FaRegBell } from "react-icons/fa6";
@@ -10,7 +9,8 @@ import Divider from '@mui/material/Divider';
 import { styled } from "@mui/material/styles";
 import { LuUserRound } from "react-icons/lu";
 import { AiOutlineLogout } from "react-icons/ai";
-
+import { MyContext } from '../../App';
+import { RiMenu2Line } from "react-icons/ri";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
@@ -32,11 +32,13 @@ const Header = () => {
         setAnchorMyAcc(null);
     };
 
+const context = useContext(MyContext);
+
     return (
-        <header className="w-full h-auto py-2! pl-90! pr-7! shadow-md bg-[#fff] flex items-center justify-between">
+        <header className={`w-full h-auto py-2! transition-all duration-300 ${context.isSideBarOpen===true ? 'pl-90!' : 'pl-5!'} pr-7! shadow-md bg-[#fff] flex items-center justify-between`}>
             <div className="part1">
-                <Button className="!w-[40px] !h-[40px] !min-w-[40px] !rounded-full !text-[rgba(0,0,0,0.8)]">
-                    <RiMenu2Line className="text-[18px] text-[rgba(0,0,0,0.8)]" />
+                <Button className="!w-[40px] !h-[40px] !min-w-[40px] !rounded-full !text-[rgba(0,0,0,0.8)]" onClick={()=>context.setIsSideBarOpen(!context.isSideBarOpen)}>
+                    <RiMenu2Line className="text-[20px] text-[rgba(0,0,0,0.8)]" />
                 </Button>
             </div>
 
