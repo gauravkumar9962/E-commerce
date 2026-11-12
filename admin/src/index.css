@@ -19,7 +19,14 @@ body {
     padding: 10px 20px !important;
 }
 
-.btn-blue:hover{
+.btn-green{
+    background: #00b585 !important;
+    color: #fff !important;
+    padding: 10px 20px !important;
+}
+
+.btn-blue:hover,
+.btn-green:hover{
     background: #183a89 !important;
 }
 

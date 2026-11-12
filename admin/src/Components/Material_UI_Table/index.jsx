@@ -25,6 +25,10 @@ import { AiOutlineEdit } from "react-icons/ai";
 import { FaRegEye } from "react-icons/fa6";
 import { GoTrash } from "react-icons/go";
 import Button from "@mui/material/Button";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 function createData(id, calories, fat, carbs, protein, kk) {
   return {
@@ -39,11 +43,11 @@ function createData(id, calories, fat, carbs, protein, kk) {
 
 const rows = [
   createData(1, 'Electronics', 'Women', 'AnimeClub', 'dd', 'dd'),
-  createData(1, 'Electronics', 'Women', 'AnimeClub', 'dd', 'dd'),
-  createData(1, 'Electronics', 'Women', 'AnimeClub', 'dd', 'dd'),
-  createData(1, 'Electronics', 'Women', 'AnimeClub', 'dd', 'dd'),
-  createData(1, 'Electronics', 'Women', 'AnimeClub', 'dd', 'dd'),
-  createData(1, 'Electronics', 'Women', 'AnimeClub', 'dd', 'dd'),
+  createData(2, 'Electronics', 'Women', 'AnimeClub', 'dd', 'dd'),
+  createData(3, 'Electronics', 'Women', 'AnimeClub', 'dd', 'dd'),
+  createData(4, 'Electronics', 'Women', 'AnimeClub', 'dd', 'dd'),
+  createData(5, 'Electronics', 'Women', 'AnimeClub', 'dd', 'dd'),
+  createData(6, 'Electronics', 'Women', 'AnimeClub', 'dd', 'dd'),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -285,12 +289,45 @@ const Material_UI_Table = () => {
     [order, orderBy, page, rowsPerPage],
   );
 
+  const id = React.useId();
+  const [categoryFilterVal, setCategoryFilterVal] = React.useState('');
+
+  const handleChangeCatFilter = (event) => {
+    setCategoryFilterVal(event.target.value);
+  };
+
   return (
     <>
       <div className="relative overflow-x-auto !mt-5 bg-white">
         <Box sx={{ width: '100%' }}>
           <Paper sx={{ width: '100%', mb: 2 }}>
             <EnhancedTableToolbar numSelected={selected.length} />
+            <div className=" flex items-center justify-between m-2 ml-5 mr-5">
+              <FormControl sx={{ minWidth: 200 }}>
+                <InputLabel id={`${id}-label`}>Category</InputLabel>
+                <Select
+                  className="w-[225px]"
+                  size="medium"
+                  aria-describedby={`${id}-helper-text`}
+                  labelId={`${id}-label`}
+                  id={id}
+                  value={categoryFilterVal}
+                  label="Category"
+                  onChange={handleChangeCatFilter}
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={10}>Men</MenuItem>
+                  <MenuItem value={20}>Women</MenuItem>
+                  <MenuItem value={30}>Kids</MenuItem>
+                </Select>
+              </FormControl>
+              <div className="flex items-center gap-3">
+                <Button className="btn-green">Export</Button>
+                <Button className="btn-blue">Add Product</Button>
+              </div>
+            </div>
             <TableContainer>
               <Table
                 sx={{ minWidth: 750 }}
@@ -311,21 +348,13 @@ const Material_UI_Table = () => {
                     const labelId = `enhanced-table-checkbox-${index}`;
 
                     return (
-                      <TableRow
-                        hover
-                        onClick={(event) => handleClick(event, row.id)}
-                        role="checkbox"
-                        aria-checked={isItemSelected}
-                        tabIndex={-1}
-                        key={row.id}
-                        selected={isItemSelected}
-                        sx={{ cursor: 'pointer' }}
-                      >
+                      <TableRow>
                         <TableCell padding="checkbox">
                           <Checkbox
                             size="small"
                             color="primary"
                             checked={isItemSelected}
+                            onClick={(event) => handleClick(event, row.id)}
                             slotProps={{
                               input: { 'aria-labelledby': labelId },
                             }}

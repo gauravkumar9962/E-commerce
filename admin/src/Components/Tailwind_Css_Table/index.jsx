@@ -8,17 +8,53 @@ import { FaRegEye } from "react-icons/fa6";
 import { GoTrash } from "react-icons/go";
 import Pagination from '@mui/material/Pagination';
 import Button from "@mui/material/Button";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 const Tailwind_Css_Table = () => {
+
+    const id = React.useId();
+    const [categoryFilterVal, setCategoryFilterVal] = React.useState('');
+
+    const handleChangeCatFilter = (event) => {
+        setCategoryFilterVal(event.target.value);
+    };
+
     return (
         <div className="relative overflow-x-auto !mt-5 bg-white">
-            <div className="text-[20px] font-[600] px-6 py-3">Products
-                <span className="text-[13px] font-[500]">(Tailwind css table)</span>
-                <div className="text-[15px] mt-5">
-                    Category
+            <div className="text-[20px] font-[600] px-6 py-3 w-full">Products
+                <span className="text-[13px] font-[500] ml-2">(Tailwind css table)</span>
+                <div className="mt-5 flex items-center justify-between">
+                    <FormControl sx={{ minWidth: 200 }}>
+                        <InputLabel id={`${id}-label`}>Category</InputLabel>
+                        <Select
+                            className="w-[225px]"
+                            size="medium"
+                            aria-describedby={`${id}-helper-text`}
+                            labelId={`${id}-label`}
+                            id={id}
+                            value={categoryFilterVal}
+                            label="Category"
+                            onChange={handleChangeCatFilter}
+                        >
+                            <MenuItem value="">
+                                <em>None</em>
+                            </MenuItem>
+                            <MenuItem value={10}>Men</MenuItem>
+                            <MenuItem value={20}>Women</MenuItem>
+                            <MenuItem value={30}>Kids</MenuItem>
+                        </Select>
+                    </FormControl>
+                    <div className="flex items-center gap-3">
+                        <Button className="btn-green">Export</Button>
+                        <Button className="btn-blue">Add Product</Button>
+                    </div>
                 </div>
+
             </div>
 
             <table className="w-full text-sm text-left rtl:text-right text-body">

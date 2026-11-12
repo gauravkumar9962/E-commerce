@@ -7,6 +7,7 @@ import Badge from "../../Components/Badge";
 import { Collapse } from "react-collapse";
 import Tailwind_Css_Table from "../../Components/Tailwind_Css_Table";
 import Material_UI_Table from "../../Components/Material_UI_Table";
+import Chart from "../../Components/Chart";
 
 const Dashboard = () => {
 
@@ -33,8 +34,9 @@ const Dashboard = () => {
             <div>
                 <DashboardBoxes />
 
-                <Tailwind_Css_Table/>
-                <Material_UI_Table/>
+                <Tailwind_Css_Table />
+                <Material_UI_Table />
+
 
                 <div className="card my-5! shadow-md rounded-lg bg-white">
                     <div className="flex items-center justify-between py-5! px-5!">
@@ -332,6 +334,8 @@ const Dashboard = () => {
 
 
                 </div>
+                
+                <Chart />
             </div>
 
         </>
