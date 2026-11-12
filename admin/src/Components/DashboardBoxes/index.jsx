@@ -9,62 +9,64 @@ import { AiTwotonePieChart } from 'react-icons/ai';
 import { BsBank } from 'react-icons/bs';
 import { RiProductHuntLine } from 'react-icons/ri';
 
-const DashboardBoxes=()=>{
+const DashboardBoxes = () => {
     return (
         <>
-        <Swiper
-        slidesPerView={3}
-        spaceBetween={10}
-        navigation={true}
-        mousewheel={true}
-        modules={[Navigation, Mousewheel]}
-        className="dashboardBoxesSlider"
-      >
-        <SwiperSlide>
-            <div className='box p-5! cursor-pointer bg-white hover:bg-[#f9f7f7] rounded-md border border-[rgba(0,0,0,0.2)] flex items-center gap-4'>
-                <AiTwotoneGift className='text-[40px] text-[#3872fa]'/>
-                <div className='info w-[70%]'>
-                    <h3>Total Images</h3>
-                    <b>$1,390</b>
-                </div>
-                <IoStatsChartSharp className='text-[50px] text-[#3872fa]'/>
-            </div>
-        </SwiperSlide>
-        
-         <SwiperSlide>
-            <div className='box p-5! cursor-pointer bg-white hover:bg-[#f9f7f7] rounded-md border border-[rgba(0,0,0,0.2)] flex items-center gap-4'>
-                <AiTwotonePieChart className='text-[40px] text-[#10b981]'/>
-                <div className='info w-[70%]'>
-                    <h3>Sales</h3>
-                    <b>$11,390</b>
-                </div>
-                <IoStatsChartSharp className='text-[50px] text-[#10b981]'/>
-            </div>
-        </SwiperSlide>
+            <div className='shadow-lg'>
+                <Swiper
+                    slidesPerView={3}
+                    spaceBetween={10}
+                    navigation={true}
+                    mousewheel={true}
+                    modules={[Navigation, Mousewheel]}
+                    className="dashboardBoxesSlider"
+                >
+                    <SwiperSlide>
+                        <div className='box p-5! cursor-pointer bg-[#3872fa] hover:bg-[#5584f4] rounded-md border border-[rgba(0,0,0,0.2)] flex items-center gap-4'>
+                            <AiTwotoneGift className='text-[40px] text-white' />
+                            <div className='info w-[70%]'>
+                                <h3 className='text-white'>Total Images</h3>
+                                <b className='text-white'>$1,390</b>
+                            </div>
+                            <IoStatsChartSharp className='text-[50px] text-white' />
+                        </div>
+                    </SwiperSlide>
 
-         <SwiperSlide>
-            <div className='box p-5! cursor-pointer bg-white hover:bg-[#f9f7f7] rounded-md border border-[rgba(0,0,0,0.2)] flex items-center gap-4'>
-                <BsBank className='text-[35px] text-[#7928ca]'/>
-                <div className='info w-[70%]'>
-                    <h3>Revenue</h3>
-                    <b>$31.90</b>
-                </div>
-                <IoStatsChartSharp className='text-[50px] text-[#7928ca]'/>
-            </div>
-        </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='box p-5! cursor-pointer bg-[#10b981] hover:bg-[#40bb92] rounded-md border border-[rgba(0,0,0,0.2)] flex items-center gap-4'>
+                            <AiTwotonePieChart className='text-[40px] text-white' />
+                            <div className='info w-[70%]'>
+                                <h3 className='text-white'>Sales</h3>
+                                <b className='text-white'>$11,390</b>
+                            </div>
+                            <IoStatsChartSharp className='text-[50px] text-white' />
+                        </div>
+                    </SwiperSlide>
 
-         <SwiperSlide>
-            <div className='box p-5! cursor-pointer bg-white hover:bg-[#f9f7f7] rounded-md border border-[rgba(0,0,0,0.2)] flex items-center gap-4'>
-                <RiProductHuntLine className='text-[40px] text-[hsl(0,92%,58%)]'/>
-                <div className='info w-[70%]'>
-                    <h3>Total Product</h3>
-                    <b>1,390</b>
-                </div>
-                <IoStatsChartSharp className='text-[50px] text-[hsl(0,92%,58%)]'/>
-            </div>
-        </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='box p-5! cursor-pointer bg-[#7928ca] hover:bg-[#8d4dcd] rounded-md border border-[rgba(0,0,0,0.2)] flex items-center gap-4'>
+                            <BsBank className='text-[35px] text-[#fcfaff]' />
+                            <div className='info w-[70%]'>
+                                <h3>Revenue</h3>
+                                <b>$31.90</b>
+                            </div>
+                            <IoStatsChartSharp className='text-[50px] text-[#fefefe]' />
+                        </div>
+                    </SwiperSlide>
 
-      </Swiper>
+                    <SwiperSlide>
+                        <div className='box p-5! cursor-pointer bg-[hsl(0,92%,58%)] hover:bg-[hsl(0,83%,67%)] rounded-md border border-[rgba(0,0,0,0.2)] flex items-center gap-4'>
+                            <RiProductHuntLine className='text-[40px] text-white' />
+                            <div className='info w-[70%]'>
+                                <h3>Total Product</h3>
+                                <b>1,390</b>
+                            </div>
+                            <IoStatsChartSharp className='text-[50px] text-white' />
+                        </div>
+                    </SwiperSlide>
+
+                </Swiper>
+            </div>
         </>
     )
 }

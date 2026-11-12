@@ -23,7 +23,7 @@ const Dashboard = () => {
 
     return (
         <>
-            <div className="w-full py-2! px-5! bg-gradient-to-r from-red-50 to-[#dffce3] border border-[rgba(0,0,0,0.2)] flex items-center gap-8 mb-5! justify-between rounded-4xl">
+            <div className="w-full shadow-lg py-2! px-5! bg-gradient-to-r from-red-100 to-green-100 border border-[rgba(0,0,0,0.2)] flex items-center gap-8 mb-5! justify-between rounded-4xl">
                 <div className="info">
                     <h1 className="text-[35px] font-bold leading-10 mb-3!">Good Morning,<br /> <span className="flex items-center gap-5">Cameron<FaHandsClapping className="text-[#2ccf86] text-[30px]" /></span></h1>
                     <p>Here's What happening on your store today. See the statistics at onec.</p>
@@ -38,7 +38,7 @@ const Dashboard = () => {
                 <Material_UI_Table />
 
 
-                <div className="card my-5! shadow-md rounded-lg bg-white">
+                <div className="card my-5! shadow-md rounded-lg bg-gradient-to-r from-red-100 to-green-100">
                     <div className="flex items-center justify-between py-5! px-5!">
                         <h2 className="text-[19px] font-[600]">Recent Orders</h2>
                     </div>

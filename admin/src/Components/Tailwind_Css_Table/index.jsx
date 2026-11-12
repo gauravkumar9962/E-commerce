@@ -25,11 +25,11 @@ const Tailwind_Css_Table = () => {
     };
 
     return (
-        <div className="relative overflow-x-auto !mt-5 bg-white">
+        <div className="relative overflow-x-auto shadow-lg !mt-5 bg-gradient-to-r from-red-100 to-green-100">
             <div className="text-[20px] font-[600] px-6 py-3 w-full">Products
                 <span className="text-[13px] font-[500] ml-2">(Tailwind css table)</span>
                 <div className="mt-5 flex items-center justify-between">
-                    <FormControl sx={{ minWidth: 200 }}>
+                    <FormControl sx={{ minWidth: 200 }} className="bg-white">
                         <InputLabel id={`${id}-label`}>Category</InputLabel>
                         <Select
                             className="w-[225px]"

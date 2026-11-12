@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Area, AreaChart } from 'recharts';
+import { XAxis, YAxis, CartesianGrid, Tooltip, Legend, Area, AreaChart } from 'recharts';
 
 
 const data = [
@@ -23,7 +23,7 @@ const Chart = ({ isAnimationActive = true }) => {
     return (
         <>
 
-            <div className="cart py-5 px-5 shadow-md sm:rounded-lg bg-white">
+            <div className="cart shadow-lg py-5 px-5 sm:rounded-lg bg-gradient-to-r from-red-100 to-green-100">
                 <div className="flex items-center justify-between py-5 pb-0">
                     <h2 className="text-[18px] font-[600]">Total Users & Total Sales</h2>
                 </div>

@@ -298,12 +298,12 @@ const Material_UI_Table = () => {
 
   return (
     <>
-      <div className="relative overflow-x-auto !mt-5 bg-white">
+      <div className="relative shadow-lg overflow-x-auto !mt-5">
         <Box sx={{ width: '100%' }}>
           <Paper sx={{ width: '100%', mb: 2 }}>
             <EnhancedTableToolbar numSelected={selected.length} />
-            <div className=" flex items-center justify-between m-2 ml-5 mr-5">
-              <FormControl sx={{ minWidth: 200 }}>
+            <div className=" flex items-center justify-between m-2 ml-5 mr-5 bg-gradient-to-r from-red-100 to-green-100">
+              <FormControl sx={{ minWidth: 200 }} className="bg-white">
                 <InputLabel id={`${id}-label`}>Category</InputLabel>
                 <Select
                   className="w-[225px]"
@@ -348,7 +348,7 @@ const Material_UI_Table = () => {
                     const labelId = `enhanced-table-checkbox-${index}`;
 
                     return (
-                      <TableRow>
+                      <TableRow className="bg-gradient-to-r from-red-100 to-green-100">
                         <TableCell padding="checkbox">
                           <Checkbox
                             size="small"
