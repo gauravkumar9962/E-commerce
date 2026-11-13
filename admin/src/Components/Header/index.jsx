@@ -32,12 +32,12 @@ const Header = () => {
         setAnchorMyAcc(null);
     };
 
-const context = useContext(MyContext);
+    const context = useContext(MyContext);
 
     return (
-        <header className={`w-full h-auto py-2! transition-all duration-300 ${context.isSideBarOpen===true ? 'pl-90!' : 'pl-5!'} pr-7! shadow-md bg-[#e7fff7] flex items-center justify-between`}>
+        <header className={`w-full h-auto py-2! transition-all duration-300 ${context.isSideBarOpen === true ? 'pl-90!' : 'pl-5!'} pr-7! shadow-md bg-[#e7fff7] flex items-center justify-between`}>
             <div className="part1">
-                <Button className="!w-[40px] !h-[40px] !min-w-[40px] !rounded-full !text-[rgba(0,0,0,0.8)]" onClick={()=>context.setIsSideBarOpen(!context.isSideBarOpen)}>
+                <Button className="!w-[40px] !h-[40px] !min-w-[40px] !rounded-full !text-[rgba(0,0,0,0.8)]" onClick={() => context.setIsSideBarOpen(!context.isSideBarOpen)}>
                     <RiMenu2Line className="text-[20px] text-[rgba(0,0,0,0.8)]" />
                 </Button>
             </div>
@@ -49,71 +49,77 @@ const context = useContext(MyContext);
                     </StyledBadge>
                 </IconButton>
 
-                <div className="relative">
-                    <div className="rounded-full w-[35px] h-[35px] overflow-hidden cursor-pointer" onClick={handleClickMyAcc}>
-                        <img src="https://i.pinimg.com/736x/12/4c/4c/124c4c22dec815e2c4305497d690636f.jpg" className="w-full h-full object-cover" />
-                    </div>
-
-                    <Menu
-                        anchorEl={anchorMyAcc}
-                        id="account-menu"
-                        open={openMyAcc}
-                        onClose={handleCloseMyAcc}
-                        onClick={handleCloseMyAcc}
-                        slotProps={{
-                            paper: {
-                                elevation: 0,
-                                sx: {
-                                    overflow: 'visible',
-                                    filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-                                    mt: 1.5,
-                                    '& .MuiAvatar-root': {
-                                        width: 32,
-                                        height: 32,
-                                        ml: -0.5,
-                                        mr: 1,
-                                    },
-                                    '&::before': {
-                                        content: '""',
-                                        display: 'block',
-                                        position: 'absolute',
-                                        top: 0,
-                                        right: 14,
-                                        width: 10,
-                                        height: 10,
-                                        bgcolor: 'background.paper',
-                                        transform: 'translateY(-50%) rotate(45deg)',
-                                        zIndex: 0,
-                                    },
-                                },
-                            },
-                        }}
-                        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-                        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-                    >
-                        <MenuItem onClick={handleCloseMyAcc}>
-                            <div className="flex items-center gap-3">
-                                <div className="rounded-full w-[35px] h-[35px] overflow-hidden cursor-pointer">
-                                    <img src="https://i.pinimg.com/736x/12/4c/4c/124c4c22dec815e2c4305497d690636f.jpg" className="w-full h-full object-cover" />
-                                </div>
-                                <div className="info">
-                                    <h3 className="text-[15px] font-[500] font-bold leading-5">Lucifer Jon</h3>
-                                    <p className="text-[13px] font-[400]">luciferjon@gmail.com</p>
-                                </div>
+                {
+                    context.isLogin === true ? (
+                        <div className="relative">
+                            <div className="rounded-full w-[35px] h-[35px] overflow-hidden cursor-pointer" onClick={handleClickMyAcc}>
+                                <img src="https://i.pinimg.com/736x/12/4c/4c/124c4c22dec815e2c4305497d690636f.jpg" className="w-full h-full object-cover" />
                             </div>
-                        </MenuItem>
 
-                        <Divider />
+                            <Menu
+                                anchorEl={anchorMyAcc}
+                                id="account-menu"
+                                open={openMyAcc}
+                                onClose={handleCloseMyAcc}
+                                onClick={handleCloseMyAcc}
+                                slotProps={{
+                                    paper: {
+                                        elevation: 0,
+                                        sx: {
+                                            overflow: 'visible',
+                                            filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                                            mt: 1.5,
+                                            '& .MuiAvatar-root': {
+                                                width: 32,
+                                                height: 32,
+                                                ml: -0.5,
+                                                mr: 1,
+                                            },
+                                            '&::before': {
+                                                content: '""',
+                                                display: 'block',
+                                                position: 'absolute',
+                                                top: 0,
+                                                right: 14,
+                                                width: 10,
+                                                height: 10,
+                                                bgcolor: 'background.paper',
+                                                transform: 'translateY(-50%) rotate(45deg)',
+                                                zIndex: 0,
+                                            },
+                                        },
+                                    },
+                                }}
+                                transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                                anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                            >
+                                <MenuItem onClick={handleCloseMyAcc}>
+                                    <div className="flex items-center gap-3">
+                                        <div className="rounded-full w-[35px] h-[35px] overflow-hidden cursor-pointer">
+                                            <img src="https://i.pinimg.com/736x/12/4c/4c/124c4c22dec815e2c4305497d690636f.jpg" className="w-full h-full object-cover" />
+                                        </div>
+                                        <div className="info">
+                                            <h3 className="text-[15px] font-[500] font-bold leading-5">Lucifer Jon</h3>
+                                            <p className="text-[13px] font-[400]">luciferjon@gmail.com</p>
+                                        </div>
+                                    </div>
+                                </MenuItem>
 
-                        <MenuItem onClick={handleCloseMyAcc} className="flex items-center gap-3">
-                            <LuUserRound /><span className="text-[14px]">Profile</span>
-                        </MenuItem>
+                                <Divider />
 
-                        <MenuItem onClick={handleCloseMyAcc} className="flex items-center gap-3">
-                            <AiOutlineLogout /><span className="text-[14px]">Logout</span>
-                        </MenuItem>
-                    </Menu>
-                </div>
+                                <MenuItem onClick={handleCloseMyAcc} className="flex items-center gap-3">
+                                    <LuUserRound /><span className="text-[14px]">Profile</span>
+                                </MenuItem>
+
+                                <MenuItem onClick={handleCloseMyAcc} className="flex items-center gap-3">
+                                    <AiOutlineLogout /><span className="text-[14px]">Logout</span>
+                                </MenuItem>
+                            </Menu>
+                        </div>
+                    ) :
+                        (<Button className="btn-blue btn-sm rounded-full!">Login</Button>)
+                }
+
             </div>
         </header>
     )

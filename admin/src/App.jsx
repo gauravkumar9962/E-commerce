@@ -4,12 +4,14 @@ import Dashboard from './Pages/Dashboard';
 import Header from './Components/Header';
 import Sidebar from './Components/Sidebar';
 import { createContext, useState } from 'react';
+import Login from './Pages/Login';
 
 const MyContext = createContext();
 
 function App() {
 
   const [isSideBarOpen, setIsSideBarOpen] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
 
   const router = createBrowserRouter([
     {
@@ -30,12 +32,23 @@ function App() {
           </section>
         </>
       )
+    },
+    {
+      path: "/login",
+      exact: true,
+      element: (
+        <>
+          <Login/>
+        </>
+      )
     }
   ])
 
   const values = {
     isSideBarOpen,
-    setIsSideBarOpen
+    setIsSideBarOpen,
+    isLogin,
+    setIsLogin
   };
 
   return (
