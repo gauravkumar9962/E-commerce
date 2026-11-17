@@ -57,9 +57,11 @@ const Login = () => {
                             <CgLogIn className="text-[15px]" />Login
                         </Button>
                     </NavLink>
-                    <Button className="rounded-full! text-[13px]! px-3! bg-[#fff]! flex gap-2">
-                        <FaRegUser className="text-[12px]" />Sign In
-                    </Button>
+                    <NavLink to={"/sign-up"} exact={true} activeClassName={"isActive"}>
+                        <Button className="rounded-full! text-[13px]! px-3! bg-[#fff]! flex gap-2">
+                            <FaRegUser className="text-[12px]" />Sign In
+                        </Button>
+                    </NavLink>
                 </div>
             </header>
             <img src="/login.jpg" className="w-full fixed bottom-0 left-0 opacity-10 pointer-events-none" />
@@ -68,7 +70,7 @@ const Login = () => {
                 <div className="text-center">
                     <img src="/login.png" className="w-[130px] m-auto" />
                 </div>
-                <h1 className="text-center text-[35px] font-[800] mt-4">Welcome Back!<br />Sign in with your credential</h1>
+                <h1 className="text-center text-[35px] font-[800] mt-4">Welcome Back!<br />Login in with your credential</h1>
 
                 <div className="flex items-center justify-center w-full mt-5 gap-3">
                     <Button
@@ -80,7 +82,7 @@ const Login = () => {
                         variant="outlined"
                         className="text-[15px]! py-2! capitalize! px-5! text-[rgba(0,0,0,0.8)]!"
                     >
-                        sign in with google
+                        Login in with google
                     </Button>
 
                     <Button
@@ -92,7 +94,7 @@ const Login = () => {
                         variant="outlined"
                         className="text-[15px]! py-2! capitalize! px-5! text-[rgba(0,0,0,0.8)]!"
                     >
-                        sign in with facebook
+                        Login in with facebook
                     </Button>
                 </div>
 
@@ -100,7 +102,7 @@ const Login = () => {
 
                 <div className="w-full flex items-center justify-center gap-3">
                     <span className="flex items-center w-[100px] h-[1px] bg-[rgba(0,0,0,0.4)]"></span>
-                    <span className="text-[15px] font-[500]">Or Sign in With Your Email</span>
+                    <span className="text-[15px] font-[500]">Or Login in With Your Email</span>
                     <span className="flex items-center w-[100px] h-[1px] bg-[rgba(0,0,0,0.4)]"></span>
                 </div>
 
@@ -143,7 +145,7 @@ const Login = () => {
                     <Link to={"forget-password"} className="text-[15px] font-[700] text-blue-500 hover:underline hover:text-gray-500">Forget Password?</Link>
                 </div>
                 <Button className="btn-blue  ml-8! h-[50px]! w-[610px]">
-                    SIGN IN
+                    Login IN
                 </Button>
             </div>
         </section>
