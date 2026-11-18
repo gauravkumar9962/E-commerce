@@ -20,6 +20,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { IoMdClose } from 'react-icons/io';
 import Slide from '@mui/material/Slide';
+import UploadProduct from './Pages/Products/UploadProduct';
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -122,31 +123,18 @@ function App() {
             <Toolbar>
               <IconButton
                 edge="start"
-                color="inherit"
                 onClick={() => setIsOpenFullScreenPanel({open:false})}
                 aria-label="close"
               >
                 <IoMdClose />
               </IconButton>
               <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-                {isOpenFullScreenPanel?.model}
+                <span className='text-black'>{isOpenFullScreenPanel?.model}</span>
               </Typography>
-              <Button autoFocus color="inherit" onClick={() => setIsOpenFullScreenPanel({open:false})}>
-                save
-              </Button>
             </Toolbar>
           </AppBar>
           <List>
-            <ListItemButton>
-              <ListItemText primary="Phone ringtone" secondary="Titania" />
-            </ListItemButton>
-            <Divider />
-            <ListItemButton>
-              <ListItemText
-                primary="Default notification ringtone"
-                secondary="Tethys"
-              />
-            </ListItemButton>
+            {isOpenFullScreenPanel?.model==="Add Product" && <UploadProduct />}
           </List>
         </Dialog>
 

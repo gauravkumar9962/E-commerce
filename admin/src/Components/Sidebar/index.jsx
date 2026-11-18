@@ -27,7 +27,7 @@ const Sidebar = () => {
 
     return (
         <>
-            <div className={`sidebar overflow-hidden top-0 left-0 bg-gradient-to-r from-red-100 to-green-100 h-full border-r border-[rgba(0,0,0,0.1)] py-2! px-4! transition-all duration-300 ${context.isSideBarOpen===true ? 'w-[18%] fixed' : 'w-[0px]'}`}>
+            <div className={`sidebar overflow-hidden top-0 left-0 bg-gradient-to-r from-red-100 to-green-100 h-full border-r border-[rgba(0,0,0,0.1)] py-2! px-4! transition-all duration-300 ${context.isSideBarOpen === true ? 'w-[18%] fixed' : 'w-[0px]'}`}>
                 <div className="py-2! w-[50%]">
                     <Link to={"/"}>
                         <img src="/header.png" className="w-[120px]" />
@@ -92,12 +92,15 @@ const Sidebar = () => {
                                 </li>
 
                                 <li className="w-full">
-                                    <Link to={"/products/upload"}>
-                                        <Button className="text-[rgba(0,0,0,0.7)]! capitalize! justify-start! w-full! text-[13px]! font-[500]! pl-19! flex gap-3">
-                                            <span className="block w-[5px] h-[5px] rounded-full bg-[rgba(0,0,0,0.3)]"></span>{" "}
-                                            Add a Product
-                                        </Button>
-                                    </Link>
+
+                                    <Button className="text-[rgba(0,0,0,0.7)]! capitalize! justify-start! w-full! text-[13px]! font-[500]! pl-19! flex gap-3" onClick={() => context.setIsOpenFullScreenPanel({
+                                        open: true,
+                                        model: 'Add Product'
+                                    })}>
+                                        <span className="block w-[5px] h-[5px] rounded-full bg-[rgba(0,0,0,0.3)]"></span>{" "}
+                                        Add Product
+                                    </Button>
+
                                 </li>
                             </ul>
                         </Collapse>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Checkbox from "@mui/material/Checkbox";
 import { Link } from "react-router-dom";
 import ProgressBar from '../../Components/ProgressBar';
@@ -12,6 +12,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { MyContext } from "../../App";
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -19,6 +20,7 @@ const Tailwind_Css_Table = () => {
 
     const id = React.useId();
     const [categoryFilterVal, setCategoryFilterVal] = React.useState('');
+    const context = useContext(MyContext);
 
     const handleChangeCatFilter = (event) => {
         setCategoryFilterVal(event.target.value);
@@ -51,7 +53,10 @@ const Tailwind_Css_Table = () => {
                     </FormControl>
                     <div className="flex items-center gap-3">
                         <Button className="btn-green">Export</Button>
-                        <Button className="btn-blue">Add Product</Button>
+                        <Button className="btn-blue" onClick={() => context.setIsOpenFullScreenPanel({
+                            open: true,
+                            model: 'Add Product'
+                        })}>Add Product</Button>
                     </div>
                 </div>
 

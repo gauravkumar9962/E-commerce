@@ -120,7 +120,7 @@ function EnhancedTableHead(props) {
   };
 
   return (
-    <TableHead className="bg-gray-50">
+    <TableHead className="bg-gray-100">
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox
