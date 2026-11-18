@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from 'prop-types';
 import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -29,6 +29,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { MyContext } from "../../App";
 
 function createData(id, calories, fat, carbs, protein, kk) {
   return {
@@ -200,7 +201,7 @@ function EnhancedTableToolbar(props) {
           id="tableTitle"
           component="div"
         >
-          Sales
+          0 Selected
         </Typography>
       )}
       {numSelected > 0 ? (
@@ -233,6 +234,7 @@ const Material_UI_Table = () => {
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const context = useContext(MyContext);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -302,7 +304,7 @@ const Material_UI_Table = () => {
         <Box sx={{ width: '100%' }}>
           <Paper sx={{ width: '100%', mb: 2 }}>
             <EnhancedTableToolbar numSelected={selected.length} />
-            <div className=" flex items-center justify-between m-2 ml-5 mr-5 bg-gradient-to-r from-red-100 to-green-100">
+            <div className=" flex items-center justify-between m-2 ml-5 mr-5">
               <FormControl sx={{ minWidth: 200 }} className="bg-white">
                 <InputLabel id={`${id}-label`}>Category</InputLabel>
                 <Select
@@ -325,12 +327,15 @@ const Material_UI_Table = () => {
               </FormControl>
               <div className="flex items-center gap-3">
                 <Button className="btn-green">Export</Button>
-                <Button className="btn-blue">Add Product</Button>
+                <Button className="btn-blue" onClick={() => context.setIsOpenFullScreenPanel({
+                  open: true,
+                  model: 'Add Product'
+                })}>Add Product</Button>
               </div>
             </div>
             <TableContainer>
               <Table
-                sx={{ minWidth: 750 }}
+                sx={{ minWidth: 750, '& .MuiTableCell-root': { padding: '15px 24px' } }}
                 aria-labelledby="tableTitle"
                 size={dense ? 'small' : 'medium'}
               >

@@ -3,9 +3,27 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Dashboard from './Pages/Dashboard';
 import Header from './Components/Header';
 import Sidebar from './Components/Sidebar';
-import { createContext, useState } from 'react';
+import { createContext, useState, forwardRef } from 'react';
 import Login from './Pages/Login';
 import SignUp from './Pages/SignUp';
+import Products from './Pages/Products';
+
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemButton from '@mui/material/ListItemButton';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import { IoMdClose } from 'react-icons/io';
+import Slide from '@mui/material/Slide';
+
+const Transition = forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 const MyContext = createContext();
 
@@ -13,6 +31,10 @@ function App() {
 
   const [isSideBarOpen, setIsSideBarOpen] = useState(true);
   const [isLogin, setIsLogin] = useState(false);
+  const [isOpenFullScreenPanel, setIsOpenFullScreenPanel] = useState({
+    open: false,
+    model: ''
+  });
 
   const router = createBrowserRouter([
     {
@@ -39,7 +61,7 @@ function App() {
       exact: true,
       element: (
         <>
-          <Login/>
+          <Login />
         </>
       )
     },
@@ -48,7 +70,26 @@ function App() {
       exact: true,
       element: (
         <>
-          <SignUp/>
+          <SignUp />
+        </>
+      )
+    },
+    {
+      path: "/products",
+      exact: true,
+      element: (
+        <>
+          <section className='main'>
+            <Header />
+            <div className='contentMain flex'>
+              <div className={`sidebarWrapper shrink-0 overflow-hidden transition-all duration-300 ${isSideBarOpen ? "w-[18%]" : "w-0"}`}>
+                <Sidebar />
+              </div>
+              <div className={`contentRight py-4! px-5! transition-all duration-300 ${isSideBarOpen === false ? 'w-[100%]' : 'w-[82%]'}`}>
+                <Products />
+              </div>
+            </div>
+          </section>
         </>
       )
     }
@@ -58,13 +99,57 @@ function App() {
     isSideBarOpen,
     setIsSideBarOpen,
     isLogin,
-    setIsLogin
+    setIsLogin,
+    isOpenFullScreenPanel,
+    setIsOpenFullScreenPanel
   };
 
   return (
     <>
       <MyContext.Provider value={values}>
         <RouterProvider router={router} />
+
+
+        <Dialog
+          fullScreen
+          open={isOpenFullScreenPanel.open}
+          onClose={() => setIsOpenFullScreenPanel({open:false})}
+          slots={{
+          transition: Transition,
+        }}
+        >
+          <AppBar sx={{ position: 'relative' }}>
+            <Toolbar>
+              <IconButton
+                edge="start"
+                color="inherit"
+                onClick={() => setIsOpenFullScreenPanel({open:false})}
+                aria-label="close"
+              >
+                <IoMdClose />
+              </IconButton>
+              <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
+                {isOpenFullScreenPanel?.model}
+              </Typography>
+              <Button autoFocus color="inherit" onClick={() => setIsOpenFullScreenPanel({open:false})}>
+                save
+              </Button>
+            </Toolbar>
+          </AppBar>
+          <List>
+            <ListItemButton>
+              <ListItemText primary="Phone ringtone" secondary="Titania" />
+            </ListItemButton>
+            <Divider />
+            <ListItemButton>
+              <ListItemText
+                primary="Default notification ringtone"
+                secondary="Tethys"
+              />
+            </ListItemButton>
+          </List>
+        </Dialog>
+
       </MyContext.Provider>
     </>
   )

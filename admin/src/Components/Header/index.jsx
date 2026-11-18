@@ -11,6 +11,7 @@ import { LuUserRound } from "react-icons/lu";
 import { AiOutlineLogout } from "react-icons/ai";
 import { MyContext } from '../../App';
 import { RiMenu2Line } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
@@ -117,7 +118,11 @@ const Header = () => {
                             </Menu>
                         </div>
                     ) :
-                        (<Button className="btn-blue btn-sm rounded-full!">Login</Button>)
+                        (
+                            <Link to={"login"}>
+                                <Button className="btn-blue btn-sm rounded-full!">Login</Button>
+                            </Link>
+                        )
                 }
 
             </div>
