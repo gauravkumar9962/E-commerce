@@ -21,6 +21,10 @@ import Typography from '@mui/material/Typography';
 import { IoMdClose } from 'react-icons/io';
 import Slide from '@mui/material/Slide';
 import UploadProduct from './Pages/Products/UploadProduct';
+import HomeSliderBanners from './Pages/HomeSliderBanners';
+import AddHomeSlide from './Pages/HomeSliderBanners/addHomeSlide';
+import CategoryList from './Pages/Category';
+import AddCategory from './Pages/Category/addCategory';
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -93,6 +97,44 @@ function App() {
           </section>
         </>
       )
+    },
+    {
+      path: "/homeSlider/list",
+      exact: true,
+      element: (
+        <>
+          <section className='main'>
+            <Header />
+            <div className='contentMain flex'>
+              <div className={`sidebarWrapper shrink-0 overflow-hidden transition-all duration-300 ${isSideBarOpen ? "w-[18%]" : "w-0"}`}>
+                <Sidebar />
+              </div>
+              <div className={`contentRight py-4! px-5! transition-all duration-300 ${isSideBarOpen === false ? 'w-[100%]' : 'w-[82%]'}`}>
+                <HomeSliderBanners />
+              </div>
+            </div>
+          </section>
+        </>
+      )
+    },
+    {
+      path: "/category/list",
+      exact: true,
+      element: (
+        <>
+          <section className='main'>
+            <Header />
+            <div className='contentMain flex'>
+              <div className={`sidebarWrapper shrink-0 overflow-hidden transition-all duration-300 ${isSideBarOpen ? "w-[18%]" : "w-0"}`}>
+                <Sidebar />
+              </div>
+              <div className={`contentRight py-4! px-5! transition-all duration-300 ${isSideBarOpen === false ? 'w-[100%]' : 'w-[82%]'}`}>
+                <CategoryList />
+              </div>
+            </div>
+          </section>
+        </>
+      )
     }
   ])
 
@@ -114,16 +156,16 @@ function App() {
         <Dialog
           fullScreen
           open={isOpenFullScreenPanel.open}
-          onClose={() => setIsOpenFullScreenPanel({open:false})}
+          onClose={() => setIsOpenFullScreenPanel({ open: false })}
           slots={{
-          transition: Transition,
-        }}
+            transition: Transition,
+          }}
         >
           <AppBar sx={{ position: 'relative' }}>
             <Toolbar>
               <IconButton
                 edge="start"
-                onClick={() => setIsOpenFullScreenPanel({open:false})}
+                onClick={() => setIsOpenFullScreenPanel({ open: false })}
                 aria-label="close"
               >
                 <IoMdClose />
@@ -134,7 +176,9 @@ function App() {
             </Toolbar>
           </AppBar>
           <List>
-            {isOpenFullScreenPanel?.model==="Add Product" && <UploadProduct />}
+            {isOpenFullScreenPanel?.model === "Add Product" && <UploadProduct />}
+            {isOpenFullScreenPanel?.model === "Add Home Slide" && <AddHomeSlide />}
+            {isOpenFullScreenPanel?.model === "Add Category" && <AddCategory />}
           </List>
         </Dialog>
 

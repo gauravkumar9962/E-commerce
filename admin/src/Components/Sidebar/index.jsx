@@ -50,21 +50,22 @@ const Sidebar = () => {
                         <Collapse isOpened={subMenuIndex === 1 ? true : false}>
                             <ul className="w-full">
                                 <li className="w-full">
-                                    <Link to={"/home"}>
+                                    <Link to={"/homeSlider/list"}>
                                         <Button className="text-[rgba(0,0,0,0.7)]! capitalize! justify-start! w-full! text-[13px]! font-[500]! pl-19! flex gap-3">
                                             <span className="block w-[5px] h-[5px] rounded-full bg-[rgba(0,0,0,0.3)]"></span>{" "}
-                                            Home Banner list
+                                            Home Slider Banner
                                         </Button>
                                     </Link>
                                 </li>
 
                                 <li className="w-full">
-                                    <Link to={"/home/addSlider"}>
-                                        <Button className="text-[rgba(0,0,0,0.7)]! capitalize! justify-start! w-full! text-[13px]! font-[500]! pl-19! flex gap-3">
-                                            <span className="block w-[5px] h-[5px] rounded-full bg-[rgba(0,0,0,0.3)]"></span>{" "}
-                                            Add Home Banner Slider
-                                        </Button>
-                                    </Link>
+                                    <Button className="text-[rgba(0,0,0,0.7)]! capitalize! justify-start! w-full! text-[13px]! font-[500]! pl-19! flex gap-3" onClick={() => context.setIsOpenFullScreenPanel({
+                                        open: true,
+                                        model: 'Add Home Slide'
+                                    })}>
+                                        <span className="block w-[5px] h-[5px] rounded-full bg-[rgba(0,0,0,0.3)]"></span>{" "}
+                                        Add Home Slider Banner
+                                    </Button>
                                 </li>
                             </ul>
                         </Collapse>
@@ -113,7 +114,7 @@ const Sidebar = () => {
                         <Collapse isOpened={subMenuIndex === 3 ? true : false}>
                             <ul className="w-full">
                                 <li className="w-full">
-                                    <Link to={"/Category"}>
+                                    <Link to={"/category/list"}>
                                         <Button className="text-[rgba(0,0,0,0.7)]! capitalize! justify-start! w-full! text-[13px]! font-[500]! pl-19! flex gap-3">
                                             <span className="block w-[5px] h-[5px] rounded-full bg-[rgba(0,0,0,0.3)]"></span>{" "}
                                             Category list
@@ -122,12 +123,13 @@ const Sidebar = () => {
                                 </li>
 
                                 <li className="w-full">
-                                    <Link to={"/Category/add"}>
-                                        <Button className="text-[rgba(0,0,0,0.7)]! capitalize! justify-start! w-full! text-[13px]! font-[500]! pl-19! flex gap-3">
-                                            <span className="block w-[5px] h-[5px] rounded-full bg-[rgba(0,0,0,0.3)]"></span>{" "}
-                                            Add Category
-                                        </Button>
-                                    </Link>
+                                    <Button className="text-[rgba(0,0,0,0.7)]! capitalize! justify-start! w-full! text-[13px]! font-[500]! pl-19! flex gap-3" onClick={() => context.setIsOpenFullScreenPanel({
+                                        open: true,
+                                        model: 'Add Category'
+                                    })}>
+                                        <span className="block w-[5px] h-[5px] rounded-full bg-[rgba(0,0,0,0.3)]"></span>{" "}
+                                        Add Category
+                                    </Button>
                                 </li>
                             </ul>
                         </Collapse>
