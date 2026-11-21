@@ -26,19 +26,19 @@ import { GoTrash } from "react-icons/go";
 import Button from "@mui/material/Button";
 import { MyContext } from "../../App";
 
-function createData(id, calories, fat) {
+function createData(id, image, action) {
     return {
         id,
-        calories,
-        fat
+        image,
+        action
     };
 }
 
 const rows = [
     createData(1, 'Electronics', 'Women'),
-    createData(1, 'Electronics', 'Women'),
-    createData(1, 'Electronics', 'Women'),
-    createData(1, 'Electronics', 'Women'),
+    createData(2, 'Electronics', 'Women'),
+    createData(3, 'Electronics', 'Women'),
+    createData(4, 'Electronics', 'Women'),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -59,16 +59,16 @@ function getComparator(order, orderBy) {
 
 const headCells = [
     {
-        id: 'Product',
+        id: 'Image',
         numeric: false,
         disablePadding: true,
         label: 'Image',
     },
     {
-        id: 'Category',
+        id: 'Action',
         numeric: true,
         disablePadding: false,
-        label: 'Category',
+        label: 'Action',
     },
 
 ];
@@ -254,7 +254,7 @@ const CategoryList = () => {
     return (
         <>
             <div className="card bg-white shadow-md rounded-md p-5 flex items-center justify-between">
-                <h1 className="font-[700] text-[20px] text-gray-800">Home Slider Banner</h1>
+                <h1 className="font-[700] text-[20px] text-gray-800">Category List</h1>
                 <div className="col1 w-[20] ml-auto">
                     <div className=" flex items-center justify-between m-2 ml-5 mr-5">
 
@@ -300,6 +300,7 @@ const CategoryList = () => {
                                             <TableRow className="bg-gradient-to-r from-red-100 to-green-100">
                                                 <TableCell padding="checkbox">
                                                     <Checkbox
+                                                        className="pr-20!"
                                                         size="small"
                                                         color="primary"
                                                         checked={isItemSelected}

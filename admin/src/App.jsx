@@ -7,13 +7,8 @@ import { createContext, useState, forwardRef } from 'react';
 import Login from './Pages/Login';
 import SignUp from './Pages/SignUp';
 import Products from './Pages/Products';
-
-import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemButton from '@mui/material/ListItemButton';
 import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -25,6 +20,8 @@ import HomeSliderBanners from './Pages/HomeSliderBanners';
 import AddHomeSlide from './Pages/HomeSliderBanners/addHomeSlide';
 import CategoryList from './Pages/Category';
 import AddCategory from './Pages/Category/addCategory';
+import SubCategoryList from './Pages/Category/subCategoryList';
+import AddSubCategory from './Pages/Category/addSubCategory';
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -135,6 +132,25 @@ function App() {
           </section>
         </>
       )
+    },
+    {
+      path: "/subCategory/list",
+      exact: true,
+      element: (
+        <>
+          <section className='main'>
+            <Header />
+            <div className='contentMain flex'>
+              <div className={`sidebarWrapper shrink-0 overflow-hidden transition-all duration-300 ${isSideBarOpen ? "w-[18%]" : "w-0"}`}>
+                <Sidebar />
+              </div>
+              <div className={`contentRight py-4! px-5! transition-all duration-300 ${isSideBarOpen === false ? 'w-[100%]' : 'w-[82%]'}`}>
+                <SubCategoryList />
+              </div>
+            </div>
+          </section>
+        </>
+      )
     }
   ])
 
@@ -179,6 +195,7 @@ function App() {
             {isOpenFullScreenPanel?.model === "Add Product" && <UploadProduct />}
             {isOpenFullScreenPanel?.model === "Add Home Slide" && <AddHomeSlide />}
             {isOpenFullScreenPanel?.model === "Add Category" && <AddCategory />}
+            {isOpenFullScreenPanel?.model === "Add Sub Category" && <AddSubCategory />}
           </List>
         </Dialog>
 

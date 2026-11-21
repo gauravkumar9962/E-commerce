@@ -26,16 +26,17 @@ import { GoTrash } from "react-icons/go";
 import Button from "@mui/material/Button";
 import { MyContext } from "../../App";
 
-function createData(id, calories, fat) {
+function createData(id, image, action) {
     return {
         id,
-        calories,
-        fat
+        image,
+        action
     };
 }
 
 const rows = [
     createData(1, 'Electronics', 'Women'),
+    createData(2, 'Electronics', 'Women'),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -56,16 +57,16 @@ function getComparator(order, orderBy) {
 
 const headCells = [
     {
-        id: 'Product',
+        id: 'Image',
         numeric: false,
         disablePadding: true,
         label: 'Image',
     },
     {
-        id: 'Category',
+        id: 'Action',
         numeric: true,
         disablePadding: false,
-        label: 'Category',
+        label: 'Action',
     },
 
 ];
