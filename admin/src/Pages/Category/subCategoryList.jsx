@@ -21,7 +21,6 @@ import { MdOutlineFilterList } from "react-icons/md";
 import { visuallyHidden } from '@mui/utils';
 import { Link } from "react-router-dom";
 import { AiOutlineEdit } from "react-icons/ai";
-import { FaRegEye } from "react-icons/fa6";
 import { GoTrash } from "react-icons/go";
 import Button from "@mui/material/Button";
 import { MyContext } from "../../App";
@@ -98,7 +97,7 @@ function EnhancedTableHead(props) {
     return (
         <TableHead className="bg-gray-100">
             <TableRow>
-                <TableCell padding="checkbox">
+                <TableCell padding="checkbox" className="pl-15! pr-15!">
                     <Checkbox
                         size="small"
                         color="primary"
@@ -313,7 +312,7 @@ const SubCategoryList = () => {
 
                                         return (
                                             <TableRow className="bg-gradient-to-r from-red-100 to-green-100">
-                                                <TableCell padding="checkbox">
+                                                <TableCell padding="checkbox" className="pl-15!">
                                                     <Checkbox
                                                         className="pr-20!"
                                                         size="small"

@@ -22,6 +22,11 @@ import CategoryList from './Pages/Category';
 import AddCategory from './Pages/Category/addCategory';
 import SubCategoryList from './Pages/Category/subCategoryList';
 import AddSubCategory from './Pages/Category/addSubCategory';
+import Users from './Pages/Users';
+import Orders from './Pages/Orders';
+import ForgetPassword from './Pages/ForgetPassword';
+import VerifyAccount from './Pages/VerifyAccount';
+import ChangePassword from './Pages/ChangePassword';
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -64,6 +69,33 @@ function App() {
       element: (
         <>
           <Login />
+        </>
+      )
+    },
+    {
+      path: "/forget-password",
+      exact: true,
+      element: (
+        <>
+          <ForgetPassword />
+        </>
+      )
+    },
+    {
+      path: "/verify-account",
+      exact: true,
+      element: (
+        <>
+          <VerifyAccount />
+        </>
+      )
+    },
+    {
+      path: "/change-password",
+      exact: true,
+      element: (
+        <>
+          <ChangePassword />
         </>
       )
     },
@@ -151,7 +183,45 @@ function App() {
           </section>
         </>
       )
-    }
+    },
+    {
+      path: "/Users",
+      exact: true,
+      element: (
+        <>
+          <section className='main'>
+            <Header />
+            <div className='contentMain flex'>
+              <div className={`sidebarWrapper shrink-0 overflow-hidden transition-all duration-300 ${isSideBarOpen ? "w-[18%]" : "w-0"}`}>
+                <Sidebar />
+              </div>
+              <div className={`contentRight py-4! px-5! transition-all duration-300 ${isSideBarOpen === false ? 'w-[100%]' : 'w-[82%]'}`}>
+                <Users />
+              </div>
+            </div>
+          </section>
+        </>
+      )
+    },
+    {
+      path: "/orders",
+      exact: true,
+      element: (
+        <>
+          <section className='main'>
+            <Header />
+            <div className='contentMain flex'>
+              <div className={`sidebarWrapper shrink-0 overflow-hidden transition-all duration-300 ${isSideBarOpen ? "w-[18%]" : "w-0"}`}>
+                <Sidebar />
+              </div>
+              <div className={`contentRight py-4! px-5! transition-all duration-300 ${isSideBarOpen === false ? 'w-[100%]' : 'w-[82%]'}`}>
+                <Orders />
+              </div>
+            </div>
+          </section>
+        </>
+      )
+    },
   ])
 
   const values = {

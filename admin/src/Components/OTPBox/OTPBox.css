@@ -1,0 +1,45 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.otp-card p {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.otp-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.otp-inputs input {
+  width: 45px;
+  height: 48px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.otp-inputs input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+}
+
+.resend {
+  margin-top: 22px;
+  text-align: center;
+}
+
+.resend span {
+  color: #2563eb;
+  font-weight: bold;
+  cursor: pointer;
+}

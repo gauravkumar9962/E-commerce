@@ -142,7 +142,7 @@ const Login = () => {
 
                 <div className="flex items-center justify-between gap-3 ml-8 w-[610px]">
                     <FormControlLabel control={<Checkbox defaultChecked />} label="Remember Me" />
-                    <Link to={"forget-password"} className="text-[15px] font-[700] text-blue-500 hover:underline hover:text-gray-500">Forget Password?</Link>
+                    <Link to={"/forget-password"} className="text-[15px] font-[700] text-blue-500 hover:underline hover:text-gray-500">Forget Password?</Link>
                 </div>
                 <Button className="btn-blue  ml-8! h-[50px]! w-[610px]">
                     Login IN

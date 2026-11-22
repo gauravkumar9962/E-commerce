@@ -26,19 +26,17 @@ import { GoTrash } from "react-icons/go";
 import Button from "@mui/material/Button";
 import { MyContext } from "../../App";
 
-function createData(id, image, action) {
+function createData(id, image, catName, action) {
     return {
         id,
         image,
+        catName,
         action
     };
 }
 
 const rows = [
-    createData(1, 'Electronics', 'Women'),
-    createData(2, 'Electronics', 'Women'),
-    createData(3, 'Electronics', 'Women'),
-    createData(4, 'Electronics', 'Women'),
+    createData(1, 'Images', 'Fashion', 'Action'),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -65,6 +63,12 @@ const headCells = [
         label: 'Image',
     },
     {
+        id: 'catName',
+        numeric: true,
+        disablePadding: false,
+        label: 'Category Name',
+    },
+    {
         id: 'Action',
         numeric: true,
         disablePadding: false,
@@ -83,7 +87,7 @@ function EnhancedTableHead(props) {
     return (
         <TableHead className="bg-gray-100">
             <TableRow>
-                <TableCell padding="checkbox">
+                <TableCell padding="checkbox" className="pl-15! pr-15!">
                     <Checkbox
                         size="small"
                         color="primary"
@@ -298,9 +302,8 @@ const CategoryList = () => {
 
                                         return (
                                             <TableRow className="bg-gradient-to-r from-red-100 to-green-100">
-                                                <TableCell padding="checkbox">
+                                                <TableCell padding="checkbox" className="pl-15!">
                                                     <Checkbox
-                                                        className="pr-20!"
                                                         size="small"
                                                         color="primary"
                                                         checked={isItemSelected}
@@ -324,6 +327,7 @@ const CategoryList = () => {
                                                         </div>
                                                     </div>
                                                 </TableCell>
+                                                <TableCell>{row.catName}</TableCell>
                                                 <TableCell >
                                                     <div className='flex items-center gap-3'>
                                                         <Tooltip title="Edit" placement="top">
