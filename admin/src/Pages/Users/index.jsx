@@ -28,6 +28,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { MyContext } from "../../App";
 import { FaPhoneAlt } from "react-icons/fa";
+import { SlCalender } from "react-icons/sl";
 
 function createData(id, image, name, email, phoneNo) {
     return {
@@ -41,6 +42,9 @@ function createData(id, image, name, email, phoneNo) {
 
 const rows = [
     createData(1, 'Images', 'Vikas Kumar', 'vikas@email.com', '+91 839288210'),
+    createData(2, 'Images', 'Vikas Kumar', 'vikas@email.com', '+91 839288210'),
+    createData(3, 'Images', 'Vikas Kumar', 'vikas@email.com', '+91 839288210'),
+    createData(4, 'Images', 'Vikas Kumar', 'vikas@email.com', '+91 839288210'),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -83,6 +87,12 @@ const headCells = [
         numeric: true,
         disablePadding: false,
         label: 'USER Phone No.',
+    },
+    {
+        id: 'created',
+        numeric: true,
+        disablePadding: false,
+        label: 'USER Created',
     },
 ];
 
@@ -360,9 +370,10 @@ const Users = () => {
                                                         </div>
                                                     </div>
                                                 </TableCell>
-                                                <TableCell ><span className="flex items-center gap-2"><MdOutlineMarkEmailRead className="text-[18px]"/>{row.name}</span></TableCell>
-                                                <TableCell ><span className="flex items-center gap-2"><FaPhoneAlt/>{row.email}</span></TableCell>
+                                                <TableCell ><span className="flex items-center gap-2"><MdOutlineMarkEmailRead className="text-[18px]" />{row.name}</span></TableCell>
+                                                <TableCell ><span className="flex items-center gap-2"><FaPhoneAlt />{row.email}</span></TableCell>
                                                 <TableCell >{row.phoneNo}</TableCell>
+                                                <TableCell ><span className="flex items-center gap-2"><SlCalender />10-12-2024</span></TableCell>
                                             </TableRow>
                                         );
                                     })}
