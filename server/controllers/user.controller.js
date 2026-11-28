@@ -6,6 +6,16 @@ import VerificationEmail from '../utils/verifyEmailTemplate.js';
 import generatedAccessToken from '../utils/generatedAccessToken.js';
 import generatedRefreshToken from '../utils/generatedRefreshToken.js';
 
+import { v2 as cloudinary } from 'cloudinary';
+import fs from 'fs';
+
+cloudinary.config({
+    cloud_name: process.env.cloudinary_Config_Cloud_Name,
+    api_key: process.env.cloudinary_Config_api_key,
+    api_secret: process.env.cloudinary_Config_api_secret,
+    secure: true,
+});
+
 export async function registerUserController(request, response) {
     try {
         let user;
@@ -164,43 +174,145 @@ export async function loginUserController(request, response) {
         })
     } catch (error) {
         return response.status(500).json({
-            message : error.message || error,
-            error : true,
-            success : false
+            message: error.message || error,
+            error: true,
+            success: false
         })
     }
 
 }
 
 //logout controller
-export async function logoutController(request, response){
+export async function logoutController(request, response) {
     try {
         const userid = request.userId
 
         const cookiesOption = {
-            httpOnly : true,
-            secure : true,
-            sameSite : "None"
+            httpOnly: true,
+            secure: true,
+            sameSite: "None"
         }
 
-        response.clearCookie("accessToken",cookiesOption)
-        response.clearCookie("refreshToken",cookiesOption)
+        response.clearCookie("accessToken", cookiesOption)
+        response.clearCookie("refreshToken", cookiesOption)
 
         const removeRefreshToken = await UserModel.findByIdAndUpdate(userid, {
-            refresh_token : ""
+            refresh_token: ""
         })
 
         return response.json({
-            message : "Logout successfully",
-            error : false,
-            success : true
+            message: "Logout successfully",
+            error: false,
+            success: true
         })
 
     } catch (error) {
         return response.status(500).json({
-            message : error.message || error,
-            error : true,
-            success : false
+            message: error.message || error,
+            error: true,
+            success: false
         })
     }
+}
+
+//Image Upload
+var imageArr = [];
+export async function userAvaterController(request, response) {
+    try {
+        imageArr = [];
+        const userId = request.userId;
+        const image = request.files; // Matches upload.single('avatar')
+        const user = await UserModel.findOne({ _id: userId });
+
+        if (!user) {
+            return response.status(500).json({
+                message: "User not found",
+                error: true,
+                success: false
+            });
+        }
+
+        //First remove image from cloudinary
+        const imgUrl = user.avatar;
+        const urlArr = imgUrl.split("/");
+        const avatar_image = urlArr[urlArr.length - 1];
+
+        const imageName = avatar_image.split(".")[0];
+
+        if (imageName) {
+            const res = await cloudinary.uploader.destroy(
+                imageName,
+                (error, result) => {
+
+                }
+            );
+        }
+
+        // 1. Check if a file was actually uploaded
+        if (!image) {
+            return response.status(400).json({
+                message: "No image file provided",
+                error: true,
+                success: false
+            });
+        }
+
+        const options = {
+            use_filename: true,
+            unique_filename: false,
+            overwrite: false,
+        };
+
+        for (let i = 0; i < image?.length; i++) {
+
+            const img = await cloudinary.uploader.upload(
+                image[i].path,
+                options,
+                function (error, result) {
+                    imageArr.push(result.secure_url);
+                    fs.unlinkSync(`uploads/${request.files[i].filename}`);
+                }
+            );
+        }
+
+        user.avatar = imageArr[0];
+        await user.save();
+
+        return response.status(200).json({
+            _id: userId,
+            avatar: imageArr[0],
+            success: true,
+            error: false
+        });
+
+    } catch (error) {
+        return response.status(500).json({
+            message: error.message || error,
+            error: true,
+            success: false
+        });
+    }
+}
+
+export async function removeImageFromCloudinary(request, response) {
+    const imgUrl = request.query.img;
+    const urlArr = imgUrl.split("/");
+    const image = urlArr[urlArr.length - 1];
+
+    const imageName = image.split(".")[0];
+
+    if (imageName) {
+        const res = await cloudinary.uploader.destroy(
+            imageName,
+            (error, result) => {
+
+            }
+        );
+
+        if (res) {
+            response.status(200).send(res);
+        }
+    }
+
+
 }
